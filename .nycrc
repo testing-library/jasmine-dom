@@ -1,0 +1,6 @@
+{
+    "exclude": [
+        "src/__tests__",
+        "index.js"
+    ]
+}
