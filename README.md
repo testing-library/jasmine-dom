@@ -16,22 +16,22 @@
 
 ---
 
-[![Build Status][build-badge]][build]
-[![Code Coverage][coverage-badge]][coverage]
-[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
-[![MIT License][license-badge]][license]
+<!-- [![Build Status][build-badge]][build] -->
+<!-- [![Code Coverage][coverage-badge]][coverage] -->
+<!-- [![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends] -->
+<!-- [![MIT License][license-badge]][license] -->
 
-[![All Contributors]()](#contributors-)
-[![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
-[![Discord][discord-badge]][discord]
+<!-- [![All Contributors]()](#contributors-) -->
+<!-- [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc] -->
+<!-- [![Discord][discord-badge]][discord] -->
 
-[![Watch on GitHub][github-watch-badge]][github-watch]
-[![Star on GitHub][github-star-badge]][github-star]
-[![Tweet][twitter-badge]][twitter]
+<!-- [![Watch on GitHub][github-watch-badge]][github-watch] -->
+<!-- [![Star on GitHub][github-star-badge]][github-star] -->
+<!-- [![Tweet][twitter-badge]][twitter] -->
 
 ## The problem
 
-You want to use [jasmine][jasmine] to write tests that assert various things about the state of the DOM. As part of that goal, you want to avoid all the repetitive patterns that arise in doing so. Checking for an element's attributes, its text content, its css classes, you name it.
+You want to use [Jasmine][jasmine] to write tests that assert various things about the state of the DOM. As part of that goal, you want to avoid all the repetitive patterns that arise in doing so. Checking for an element's attributes, its text content, its css classes, you name it.
 
 ## This solution
 
