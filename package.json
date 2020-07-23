@@ -4,7 +4,6 @@
   "description": "Custom Jasmine matchers for testing DOM elements",
   "scripts": {
     "build": "babel ./src --out-dir ./dist --ignore \"**/__tests__\"",
-    "postinstall": "node ./dist/postinstall.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:watch": "onchange \"src/**/*.js\" \"tests/**/*.js\" -- yarn lint:fix",
