@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:watch": "onchange \"src/**/*.js\" \"tests/**/*.js\" -- yarn lint:fix",
-    "test": "nyc --reporter=text jasmine --config=jasmine.json",
+    "test": "nyc --reporter=text --reporter=lcov jasmine --config=jasmine.json",
     "test:watch": "onchange \"src/**/*.js\" \"src/__tests__/**/*.js\" -- yarn test",
     "prepublish": "yarn build",
     "setup": "npm run lint && npm run test && npm run build"
