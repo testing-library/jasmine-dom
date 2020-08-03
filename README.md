@@ -17,18 +17,22 @@
 
 ---
 
-<!-- [![Build Status][build-badge]][build] -->
-<!-- [![Code Coverage][coverage-badge]][coverage] -->
-<!-- [![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends] -->
-<!-- [![MIT License][license-badge]][license] -->
+[![Build Status][build-badge]][build]
+[![Code Coverage][coverage-badge]][coverage]
 
-<!-- [![All Contributors]()](#contributors-) -->
-<!-- [![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc] -->
-<!-- [![Discord][discord-badge]][discord] -->
+[![version][version-badge]][package] [![downloads][downloads-badge]][npmtrends]
 
-<!-- [![Watch on GitHub][github-watch-badge]][github-watch] -->
-<!-- [![Star on GitHub][github-star-badge]][github-star] -->
-<!-- [![Tweet][twitter-badge]][twitter] -->
+[![MIT License][license-badge]][license]
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+[![PRs Welcome][prs-badge]][prs] [![Code of Conduct][coc-badge]][coc]
+
+[![Discord][discord-badge]][discord]
+
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
 
 ## The problem
 
@@ -40,16 +44,17 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
 ## Table of Contents
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Documentation](#documentation)
-  - [Inspiration](#inspiration)
-  - [Other Solutions](#other-solutions)
-  - [Guiding Principles](#guiding-principles)
-  - [Contributors](#contributors)
-  - [LICENSE](#license)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Documentation](#documentation)
+-   [Inspiration](#inspiration)
+-   [Other Solutions](#other-solutions)
+-   [Guiding Principles](#guiding-principles)
+-   [Contributors](#contributors)
+-   [LICENSE](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -58,11 +63,13 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
 This module is distributed via [npm][npm] which is bundled with [node][node] and should be installed as one of your project's `devDependencies`.
 
 Using npm:
+
 ```
 npm install --save-dev jasmine-dom
 ```
 
 or for installation using [yarn][yarn] package manager:
+
 ```
 yarn add --dev jasmine-dom
 ```
@@ -70,28 +77,26 @@ yarn add --dev jasmine-dom
 ## Usage
 
 You should have a directory for helpers specified inside the helpers array in your `jasmine.json` file.
-Example: 
+Example:
+
 ```json
 {
-    "spec_dir": "src/__tests__",
-    "spec_files": [
-        "**/*.test.js"
-    ],
-    "helpers": [
-        "helpers/**/*.js"
-    ],
-    "stopSpecOnExpectationFailure": false,
-    "random": false
+	"spec_dir": "src/__tests__",
+	"spec_files": ["**/*.test.js"],
+	"helpers": ["helpers/**/*.js"],
+	"stopSpecOnExpectationFailure": false,
+	"random": false
 }
 ```
 
 Make a new file inside that directory, import jasmine-dom and add the matchers like so:
+
 ```javascript
-import JasmineDOM from 'jasmine-dom'
+import JasmineDOM from 'jasmine-dom';
 
 beforeAll(() => {
-  jasmine.getEnv().addMatchers(JasmineDOM);
-})
+	jasmine.getEnv().addMatchers(JasmineDOM);
+});
 ```
 
 That's it! You're good to go.
@@ -116,7 +121,7 @@ For extending Jasmine's matchers outside the realm of DOM testing, [Jasmine-Matc
 
 ## Guiding Principles
 
->[The more your tests resemble the way your software is used, the more confidence they can give you][guiding-principle]
+> [The more your tests resemble the way your software is used, the more confidence they can give you][guiding-principle]
 
 ## Contributors
 
@@ -141,39 +146,29 @@ MIT
 [node]: https://nodejs.org
 [testing-library]: https://testing-library.com/
 [yarn]: https://yarnpkg.com
-<!-- A PARTIR DE ACÁ, EDITAR CON MIS BADGES -->
-[build-badge]:
-  https://img.shields.io/travis/testing-library/jest-dom.svg?style=flat-square
-[build]: https://travis-ci.org/testing-library/jest-dom
-[coverage-badge]:
-  https://img.shields.io/codecov/c/github/testing-library/jest-dom.svg?style=flat-square
-[coverage]: https://codecov.io/github/testing-library/jest-dom
-[version-badge]:
-  https://img.shields.io/npm/v/@testing-library/jest-dom.svg?style=flat-square
-[package]: https://www.npmjs.com/package/@testing-library/jest-dom
-[downloads-badge]:
-  https://img.shields.io/npm/dm/@testing-library/jest-dom.svg?style=flat-square
-[npmtrends]: http://www.npmtrends.com/@testing-library/jest-dom
-[license-badge]:
-  https://img.shields.io/npm/l/@testing-library/jest-dom.svg?style=flat-square
-[license]: https://github.com/testing-library/jest-dom/blob/master/LICENSE
-[prs-badge]:
-  https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+
+<!-- BADGES -->
+
+[build-badge]: https://travis-ci.org/brrianalexis/jasmine-dom.svg?branch=master
+[build]: https://travis-ci.org/brrianalexis/jasmine-dom
+[coverage-badge]: https://codecov.io/gh/brrianalexis/jasmine-dom/branch/master/graph/badge.svg
+[coverage]: https://codecov.io/gh/brrianalexis/jasmine-dom
+[version-badge]: https://img.shields.io/npm/v/@testing-library/jasmine-dom?style=flat-square
+[package]: https://www.npmjs.com/package/@testing-library/jasmine-dom
+[downloads-badge]: https://img.shields.io/npm/dm/@testing-library/jasmine-dom?style=flat-square
+[npmtrends]: http://www.npmtrends.com/@testing-library/jasmine-dom
+[license-badge]: https://img.shields.io/npm/l/@testing-library/jasmine-dom?style=flat-square
+[license]: https://github.com/testing-library/jasmine-dom/blob/master/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
-[coc-badge]:
-  https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]:
-  https://github.com/testing-library/jest-dom/blob/master/other/CODE_OF_CONDUCT.md
-[github-watch-badge]:
-  https://img.shields.io/github/watchers/testing-library/jest-dom.svg?style=social
-[github-watch]: https://github.com/testing-library/jest-dom/watchers
-[github-star-badge]:
-  https://img.shields.io/github/stars/testing-library/jest-dom.svg?style=social
-[github-star]: https://github.com/testing-library/jest-dom/stargazers
-[twitter]:
-  https://twitter.com/intent/tweet?text=Check%20out%20jest-dom%20by%20%40gnapse%20https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjest-dom%20%F0%9F%91%8D
-[twitter-badge]:
-  https://img.shields.io/twitter/url/https/github.com/testing-library/jest-dom.svg?style=social
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[coc]: https://github.com/testing-library/jasmine-dom/blob/master/other/CODE_OF_CONDUCT.md
+[github-watch-badge]: https://img.shields.io/github/watchers/testing-library/jasmine-dom?style=social
+[github-watch]: https://github.com/testing-library/jasmine-dom/watchers
+[github-star-badge]: https://img.shields.io/github/stars/testing-library/jasmine-dom?style=social
+[github-star]: https://github.com/testing-library/jasmine-dom/stargazers
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20jest-dom%20by%20%40brrianalexis%20https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom%20%F0%9F%91%8D
+[twitter-badge]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom
 [emojis]: https://allcontributors.org/docs/en/emoji-key
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [guiding-principle]: https://testing-library.com/docs/guiding-principles
