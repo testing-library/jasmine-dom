@@ -1,8 +1,31 @@
-import { checkHtmlElement, getTag } from './utils';
+import { roles } from 'aria-query';
+import { checkHtmlElement, getTag, toSentence } from './utils';
 import { printSecWarning, printWarning, printSuccess, printSecSuccess, printError, printSecError } from './printers';
+
+function roleSupportsChecked(role) {
+	return roles.get(role)?.props['aria-checked'] !== undefined;
+}
+
+function supportedRoles() {
+	return Array.from(roles.keys()).filter(roleSupportsChecked);
+}
+
+function supportedRolesSentence() {
+	return toSentence(
+		supportedRoles().map(role => `role="${role}"`),
+		{ lastWordConnector: ' or ' }
+	);
+}
 
 function isValidInput(htmlElement) {
 	return getTag(htmlElement) === 'input' && ['checkbox', 'radio'].includes(htmlElement.type);
+}
+
+function isValidAriaElement(htmlElement) {
+	return (
+		roleSupportsChecked(htmlElement.getAttribute('role')) &&
+		['true', 'false'].includes(htmlElement.getAttribute('aria-checked'))
+	);
 }
 
 function isChecked(htmlElement) {
@@ -23,11 +46,11 @@ export function toBeChecked() {
 			checkHtmlElement(htmlElement);
 			let result = {};
 			const validInput = isValidInput(htmlElement);
-			const verifyElement = checkInputTypeOrRole(htmlElement);
-			if (!validInput && !verifyElement) {
+			const validAriaElement = isValidAriaElement(htmlElement);
+			if (!validInput && !validAriaElement) {
 				result.pass = false;
 				result.message = `🤔 ${printSecWarning(
-					`Only inputs with type='checkbox/radio' or elements with role='checkbox/radio/switch' and a valid aria-checked attribute can be used with ${printWarning(
+					`Only inputs with type='checkbox/radio' or elements with ${supportedRolesSentence()} and a valid aria-checked attribute can be used with ${printWarning(
 						'.toBeChecked'
 					)}. Use ${printSuccess(`.toHaveValue()`)} instead.`
 				)}`;
@@ -54,8 +77,8 @@ export function toBeChecked() {
 			checkHtmlElement(htmlElement);
 			let result = {};
 			const validInput = isValidInput(htmlElement);
-			const verifyElement = checkInputTypeOrRole(htmlElement);
-			if (!validInput && !verifyElement) {
+			const validAriaElement = isValidAriaElement(htmlElement);
+			if (!validInput && !validAriaElement) {
 				result.pass = false;
 				result.message = `🤔 ${printSecWarning(
 					`Only inputs with type='checkbox/radio' or elements with role='checkbox/radio/switch' and a valid aria-checked attribute can be used with`

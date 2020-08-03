@@ -48,7 +48,7 @@ describe('.toBeChecked', () => {
 		expect(queryByTestId('aria-unchecked-switch')).not.toBeChecked();
 	});
 
-	xit('TO BE ADDED: element w/ menuitemcheckbox role', () => {
+	it('TO BE ADDED: element w/ menuitemcheckbox role', () => {
 		const { queryByTestId } = render(`
       <div role="menuitemcheckbox" aria-checked="true" data-testid="checked-aria-menuitemcheckbox" />
       <div role="menuitemcheckbox" aria-checked="false" data-testid="unchecked-aria-menuitemcheckbox" />
@@ -166,7 +166,7 @@ describe('.toBeChecked', () => {
 
 		expect(pass).toBeFalse();
 		expect(message).toMatch(
-			/Only inputs with type='checkbox\/radio' or elements with role='checkbox\/radio\/switch' and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
+			/Only inputs with type='checkbox\/radio' or elements with .* and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
 		);
 	});
 
@@ -178,7 +178,7 @@ describe('.toBeChecked', () => {
 
 		expect(pass).toBeFalse();
 		expect(message).toMatch(
-			/Only inputs with type='checkbox\/radio' or elements with role='checkbox\/radio\/switch' and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
+			/Only inputs with type='checkbox\/radio' or elements with .* and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
 		);
 	});
 
@@ -190,7 +190,7 @@ describe('.toBeChecked', () => {
 
 		expect(pass).toBeFalse();
 		expect(message).toMatch(
-			/Only inputs with type='checkbox\/radio' or elements with role='checkbox\/radio\/switch' and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
+			/Only inputs with type='checkbox\/radio' or elements with .* and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
 		);
 	});
 
@@ -203,12 +203,12 @@ describe('.toBeChecked', () => {
 
 		expect(positivePass).toBeFalse();
 		expect(positiveMessage).toMatch(
-			/Only inputs with type='checkbox\/radio' or elements with role='checkbox\/radio\/switch' and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
+			/Only inputs with type='checkbox\/radio' or elements with .* and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
 		);
 
 		expect(negativePass).toBeFalse();
 		expect(negativeMessage).toMatch(
-			/Only inputs with type='checkbox\/radio' or elements with role='checkbox\/radio\/switch' and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
+			/Only inputs with type='checkbox\/radio' or elements with .* and a valid aria-checked attribute can be used.*Use.*toHaveValue\(\).*instead/
 		);
 	});
 });
