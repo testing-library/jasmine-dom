@@ -1,0 +1,11 @@
+{
+    "projectName": "jasmine-dom",
+    "projectOwner": "testing-library",
+    "repoType": "github",
+    "files": [
+        "README.md"
+    ],
+    "imageSize": 100,
+    "commit": false,
+    "contributors": []
+}
