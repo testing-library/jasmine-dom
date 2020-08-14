@@ -9,16 +9,14 @@ export function toHaveAttribute(util) {
 			const isExpectedValuePresent = expectedValue !== undefined;
 			const hasAttribute = htmlElement.hasAttribute(name);
 			const receivedValue = htmlElement.getAttribute(name);
-			result.pass = isExpectedValuePresent
-				? hasAttribute && util.equals(receivedValue, expectedValue)
-				: hasAttribute;
+			result.pass = isExpectedValuePresent ? hasAttribute && util.equals(receivedValue, expectedValue) : hasAttribute;
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
+				? `${printSuccess('PASSED')} ${printSecSuccess(
 						`Expected the value of the received attribute ${printSuccess(`'${name}'`)} to be ${printSuccess(
 							`'${expectedValue}'`
 						)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the value of the received attribute ${printError(`'${name}'`)} to be ${printError(
 							`'${expectedValue}'`
 						)}, but received ${printError(`'${receivedValue}'`)}.`
@@ -31,16 +29,14 @@ export function toHaveAttribute(util) {
 			const isExpectedValuePresent = expectedValue !== undefined;
 			const hasAttribute = htmlElement.hasAttribute(name);
 			const receivedValue = htmlElement.getAttribute(name);
-			result.pass = isExpectedValuePresent
-				? hasAttribute && !util.equals(receivedValue, expectedValue)
-				: !hasAttribute;
+			result.pass = isExpectedValuePresent ? hasAttribute && !util.equals(receivedValue, expectedValue) : !hasAttribute;
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
-						`Expected the value of the received attribute ${printSuccess(
-							`'${name}'`
-						)} not to be ${printSuccess(`'${expectedValue}'`)}.`
+				? `${printSuccess('PASSED')} ${printSecSuccess(
+						`Expected the value of the received attribute ${printSuccess(`'${name}'`)} not to be ${printSuccess(
+							`'${expectedValue}'`
+						)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the value of the received attribute ${printError(`'${name}'`)} not to be ${printError(
 							`'${expectedValue}'`
 						)}, but received ${printError(`'${receivedValue}'`)}.`

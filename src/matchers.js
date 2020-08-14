@@ -1,4 +1,3 @@
-//!	Antes de correr yarn pack, limpiar caché! yarn cache clean
 import { toHaveAttribute } from './toHaveAttribute';
 import { toHaveTextContent } from './toHaveTextContent';
 import { toHaveClassName } from './toHaveClassName';

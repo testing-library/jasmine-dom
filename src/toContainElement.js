@@ -12,15 +12,11 @@ export function toContainElement() {
 			result.pass = container.contains(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(getTag(container))} to contain ${printSuccess(
-								getTag(htmlElement)
-							)}`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(container))} to contain ${printSuccess(getTag(htmlElement))}`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(getTag(container))} to contain ${printError(
-								getTag(htmlElement)
-							)}`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(container))} to contain ${printError(getTag(htmlElement))}`
 					  )}`
 			}`;
 			return result;
@@ -34,15 +30,13 @@ export function toContainElement() {
 			result.pass = !container.contains(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
+					? `${printSuccess('PASSED')} ${printSecSuccess(
 							`Expected the element ${printSuccess(getTag(container))} not to contain ${printSuccess(
 								getTag(htmlElement)
 							)}`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(getTag(container))} not to contain ${printError(
-								getTag(htmlElement)
-							)}`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(container))} not to contain ${printError(getTag(htmlElement))}`
 					  )}`
 			}`;
 			return result;

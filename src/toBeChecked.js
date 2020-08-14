@@ -33,13 +33,6 @@ function isChecked(htmlElement) {
 	return htmlElement.getAttribute('aria-checked') === 'true';
 }
 
-function checkInputTypeOrRole(htmlElement) {
-	return (
-		['checkbox', 'radio', 'switch'].includes(htmlElement.getAttribute('role')) &&
-		['true', 'false'].includes(htmlElement.getAttribute('aria-checked'))
-	);
-}
-
 export function toBeChecked() {
 	return {
 		compare: function (htmlElement) {
@@ -49,7 +42,7 @@ export function toBeChecked() {
 			const validAriaElement = isValidAriaElement(htmlElement);
 			if (!validInput && !validAriaElement) {
 				result.pass = false;
-				result.message = `🤔 ${printSecWarning(
+				result.message = `${printError('FAILED')} ${printSecWarning(
 					`Only inputs with type='checkbox/radio' or elements with ${supportedRolesSentence()} and a valid aria-checked attribute can be used with ${printWarning(
 						'.toBeChecked'
 					)}. Use ${printSuccess(`.toHaveValue()`)} instead.`
@@ -60,12 +53,12 @@ export function toBeChecked() {
 			result.pass = checkedInput;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be checked and it ${printSuccess('is checked')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be checked and it ${printSuccess(
+								'is checked'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} ${printError(
 								`type="${htmlElement.type}"`
 							)} to be checked and it ${printError("isn't checked")}.`
@@ -80,7 +73,7 @@ export function toBeChecked() {
 			const validAriaElement = isValidAriaElement(htmlElement);
 			if (!validInput && !validAriaElement) {
 				result.pass = false;
-				result.message = `🤔 ${printSecWarning(
+				result.message = `${printError('FAILED')} ${printSecWarning(
 					`Only inputs with type='checkbox/radio' or elements with role='checkbox/radio/switch' and a valid aria-checked attribute can be used with`
 				)} ${printWarning(`.toBeChecked()`)}${printSecWarning('. Use')} ${printSuccess(
 					`.toHaveValue()`
@@ -91,12 +84,12 @@ export function toBeChecked() {
 			result.pass = notCheckedInput;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} not to be checked and it ${printSuccess("isn't checked")}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} not to be checked and it ${printSuccess(
+								"isn't checked"
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} ${printError(
 								`type="${htmlElement.type}"`
 							)} not to be checked and it ${printError('is checked')}.`

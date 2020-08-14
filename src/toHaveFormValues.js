@@ -13,7 +13,9 @@ function getMultiElementValue(htmlElements) {
 	const types = uniq(htmlElements.map(htmlElement => htmlElement.type));
 
 	if (types.length !== 1) {
-		throw new Error(printWarning(`🤔 Multiple form elements with the same name must be of the same type`));
+		throw new Error(
+			printWarning(`${printError('FAILED')} Multiple form elements with the same name must be of the same type`)
+		);
 	}
 
 	switch (types[0]) {
@@ -67,10 +69,8 @@ export function toHaveFormValues() {
 			checkHtmlElement(formElement);
 			if (!formElement.elements) {
 				throw new Error(
-					`🤔 ${printSecWarning(
-						`.toHaveFormValues() must be called on a ${printWarning('form')} or a ${printWarning(
-							'fieldset'
-						)} element.`
+					`${printError('FAILED')} ${printSecWarning(
+						`.toHaveFormValues() must be called on a ${printWarning('form')} or a ${printWarning('fieldset')} element.`
 					)}`
 				);
 			}
@@ -90,7 +90,7 @@ export function toHaveFormValues() {
 							Object.keys(commonKeyValues).map(key => `\n${key}: ${commonKeyValues[key]}`)
 						)}`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(formElement))} to have values: ${printError(
 							Object.keys(expectedValues).map(key => `\n${key}: ${expectedValues[key]}`)
 						)}.\nValues received for the expected keys: ${printError(
@@ -103,10 +103,8 @@ export function toHaveFormValues() {
 			checkHtmlElement(formElement);
 			if (!formElement.elements) {
 				throw new Error(
-					`🤔 ${printSecWarning(
-						`.toHaveFormValues() must be called on a ${printWarning('form')} or a ${printWarning(
-							'fieldset'
-						)} element.`
+					`${printError('FAILED')} ${printSecWarning(
+						`.toHaveFormValues() must be called on a ${printWarning('form')} or a ${printWarning('fieldset')} element.`
 					)}`
 				);
 			}
@@ -126,7 +124,7 @@ export function toHaveFormValues() {
 							Object.keys(commonKeyValues).map(key => `\n${key}: ${commonKeyValues[key]}`)
 						)}`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(formElement))} not to have values: ${printError(
 							Object.keys(expectedValues).map(key => `\n${key}: ${expectedValues[key]}`)
 						)}.\nValues received for the expected keys: ${printError(

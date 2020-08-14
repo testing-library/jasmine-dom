@@ -42,9 +42,13 @@ describe('.toHaveDisplayValue', () => {
 			const { message: positiveMessage, pass: positivePass } = compare(queryByTestId('select'), 'Ananas');
 
 			expect(negativePass).toBeFalse();
-			expect(negativeMessage).toMatch(/😨/);
+			expect(negativeMessage).toMatch(
+				/FAILED.*Expected the element.*select.*not to have display value.*'Select a fruit\.\.\.'.*\. Received.*'Select a fruit\.\.\.'/i
+			);
 			expect(positivePass).toBeFalse();
-			expect(positiveMessage).toMatch(/😨/);
+			expect(positiveMessage).toMatch(
+				/FAILED.*Expected the element.*select.*to have display value.*'Ananas'.*\. Received.*'Select a fruit\.\.\.'/i
+			);
 		});
 
 		it('w/ input elements', () => {
@@ -64,9 +68,7 @@ describe('.toHaveDisplayValue', () => {
 		});
 
 		it('w/ textarea elements', () => {
-			const { queryByTestId } = render(
-				'<textarea data-testid="textarea">An example description here.</textarea>'
-			);
+			const { queryByTestId } = render('<textarea data-testid="textarea">An example description here.</textarea>');
 			const textarea = queryByTestId('textarea');
 
 			expect(textarea).toHaveDisplayValue('An example description here.');
@@ -150,9 +152,7 @@ describe('.toHaveDisplayValue', () => {
 				errorMessage = err.message;
 			}
 
-			expect(errorMessage).toMatch(
-				/🤔 \.toHaveDisplayValue\(\) currently does not support.*input\[type="radio"\].*/
-			);
+			expect(errorMessage).toMatch(/\.toHaveDisplayValue\(\) currently does not support.*input\[type="radio"\].*/);
 
 			try {
 				expect(queryByTestId('checkbox')).toHaveDisplayValue(true);
@@ -160,9 +160,7 @@ describe('.toHaveDisplayValue', () => {
 				errorMessage = err.message;
 			}
 
-			expect(errorMessage).toMatch(
-				/🤔 \.toHaveDisplayValue\(\) currently does not support.*input\[type="checkbox"\].*/
-			);
+			expect(errorMessage).toMatch(/\.toHaveDisplayValue\(\) currently does not support.*input\[type="checkbox"\].*/);
 		});
 	});
 });

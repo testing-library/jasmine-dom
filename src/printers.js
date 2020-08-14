@@ -1,8 +1,5 @@
 import chalk from 'chalk';
 
-function printInfo(message) {
-	return chalk.cyan(message);
-}
 function printError(message) {
 	return chalk.bgRedBright.black(message);
 }
@@ -27,4 +24,4 @@ function printSecWarning(message) {
 	return chalk.yellow(message);
 }
 
-export { printInfo, printError, printSuccess, printWarning, printSecError, printSecSuccess, printSecWarning };
+export { printError, printSuccess, printWarning, printSecError, printSecSuccess, printSecWarning };

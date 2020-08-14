@@ -24,12 +24,12 @@ export function toHaveDescription(util) {
 				: Boolean(description);
 			checkWith === undefined ? (checkWith = '') : null;
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
+				? `${printSuccess('PASSED')} ${printSecSuccess(
 						`Expected the ${printSuccess(getTag(htmlElement))} element to have description ${printSuccess(
 							`'${checkWith}'`
 						)}. Received ${printSuccess(`'${description}'`)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printSuccess('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(htmlElement))} element to have description ${printError(
 							`'${checkWith}'`
 						)}. Received ${printError(`'${description}'`)}.`
@@ -57,14 +57,12 @@ export function toHaveDescription(util) {
 				: !Boolean(description);
 			checkWith === undefined ? (checkWith = '') : null;
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
-						`Expected the ${printSuccess(
-							getTag(htmlElement)
-						)} element not to have description ${printSuccess(`'${checkWith}'`)}. Received ${printSuccess(
-							`'${description}'`
-						)}.`
+				? `${printSuccess('PASSED')} ${printSecSuccess(
+						`Expected the ${printSuccess(getTag(htmlElement))} element not to have description ${printSuccess(
+							`'${checkWith}'`
+						)}. Received ${printSuccess(`'${description}'`)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printSuccess('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(htmlElement))} element not to have description ${printError(
 							`'${checkWith}'`
 						)}. Received ${printError(`'${description}'`)}.`

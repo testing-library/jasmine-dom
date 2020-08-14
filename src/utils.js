@@ -5,9 +5,9 @@ import { printError, printSecError, printWarning, printSecWarning } from './prin
 class HtmlElementTypeError extends Error {
 	constructor(htmlElement) {
 		super();
-		this.message = printSecWarning(
-			`🤔 Received element must be an HTMLElement or an SVGElement.\nReceived: ${printWarning(htmlElement)}`
-		);
+		this.message = `${printError('FAILED')} ${printSecWarning(
+			`Received element must be an HTMLElement or an SVGElement.\nReceived: ${printWarning(htmlElement)}`
+		)}`;
 	}
 }
 

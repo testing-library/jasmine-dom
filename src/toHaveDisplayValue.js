@@ -27,7 +27,7 @@ export function toHaveDisplayValue() {
 			if (!['select', 'input', 'textarea'].includes(tagName)) {
 				throw new Error(
 					printSecWarning(
-						`🤔 .toHaveDisplayValue() supports only ${printWarning('input')}, ${printWarning(
+						`${printError('FAILED')} .toHaveDisplayValue() supports only ${printWarning('input')}, ${printWarning(
 							'textarea'
 						)} or ${printWarning('select')} elements. Try using another matcher instead.`
 					)
@@ -37,7 +37,7 @@ export function toHaveDisplayValue() {
 			if (tagName === 'input' && ['radio', 'checkbox'].includes(htmlElement.type)) {
 				throw new Error(
 					printSecWarning(
-						`🤔 .toHaveDisplayValue() currently does not support ${printWarning(
+						`${printError('FAILED')} .toHaveDisplayValue() currently does not support ${printWarning(
 							`input[type="${htmlElement.type}"]`
 						)}, try with another matcher instead.`
 					)
@@ -52,12 +52,12 @@ export function toHaveDisplayValue() {
 
 			result.pass = matchedWithAllValues && matchedWithAllExpectedValues;
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
+				? `${printSuccess('PASSED')} ${printSecSuccess(
 						`Expected the element ${printSuccess(getTag(htmlElement))} to have display value ${printSuccess(
 							`'${expectedValue}'`
 						)}. Received ${printSuccess(`'${values}'`)}`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the element ${printError(getTag(htmlElement))} to have display value ${printError(
 							`'${expectedValue}'`
 						)}. Received ${printError(`'${values}'`)}`
@@ -72,7 +72,7 @@ export function toHaveDisplayValue() {
 			if (!['select', 'input', 'textarea'].includes(tagName)) {
 				throw new Error(
 					printSecWarning(
-						`🤔 .toHaveDisplayValue() supports only ${printWarning('input')}, ${printWarning(
+						`${printError('FAILED')} .toHaveDisplayValue() supports only ${printWarning('input')}, ${printWarning(
 							'textarea'
 						)} or ${printWarning('select')} elements. Try using another matcher instead.`
 					)
@@ -87,14 +87,12 @@ export function toHaveDisplayValue() {
 
 			result.pass = !(matchedWithAllValues && matchedWithAllExpectedValues);
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
-						`Expected the element ${printSuccess(
-							getTag(htmlElement)
-						)} not to have display value ${printSuccess(`'${expectedValue}'`)}. Received ${printSuccess(
-							`'${values}'`
-						)}`
+				? `${printSuccess('PASSED')} ${printSecSuccess(
+						`Expected the element ${printSuccess(getTag(htmlElement))} not to have display value ${printSuccess(
+							`'${expectedValue}'`
+						)}. Received ${printSuccess(`'${values}'`)}`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the element ${printError(getTag(htmlElement))} not to have display value ${printError(
 							`'${expectedValue}'`
 						)}. Received ${printError(`'${values}'`)}`

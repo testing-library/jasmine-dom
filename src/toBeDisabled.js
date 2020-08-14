@@ -41,12 +41,12 @@ export function toBeDisabled() {
 			result.pass = isDisabled;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be disabled and it ${printSuccess('is disabled')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be disabled and it ${printSuccess(
+								'is disabled'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} to be disabled and it ${printError(
 								"isn't disabled"
 							)}.`
@@ -61,15 +61,15 @@ export function toBeDisabled() {
 			result.pass = isNotDisabled;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} not to be disabled and it ${printSuccess("isn't disabled")}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} not to be disabled and it ${printSuccess(
+								"isn't disabled"
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} not to be disabled and it ${printError('is disabled')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} not to be disabled and it ${printError(
+								'is disabled'
+							)}.`
 					  )}`
 			}`;
 			return result;
@@ -86,12 +86,12 @@ export function toBeEnabled() {
 			result.pass = isEnabled;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be enabled and it ${printSuccess('is enabled')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be enabled and it ${printSuccess(
+								'is enabled'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} to be enabled and it ${printError(
 								"isn't enabled"
 							)}.`
@@ -106,15 +106,15 @@ export function toBeEnabled() {
 			result.pass = !isEnabled;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} not to be enabled and it ${printSuccess("isn't enabled")}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} not to be enabled and it ${printSuccess(
+								"isn't enabled"
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} not to be enabled and it ${printError('is enabled')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} not to be enabled and it ${printError(
+								'is enabled'
+							)}.`
 					  )}`
 			}`;
 			return result;

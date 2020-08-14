@@ -44,14 +44,14 @@ export function toHaveClassName() {
 			if (options.exact) {
 				result.pass = isSubset(expected, received) && expected.length === received.length;
 				result.message = result.pass
-					? `💯 ${printSecSuccess(
+					? `${printSuccess('PASSED')} ${printSecSuccess(
 							`Expected the provided ${printSuccess(getTag(htmlElement))} element to have ${printSuccess(
 								'EXACTLY'
 							)} defined classes ${printSuccess(`${expected.join(' ')}`)}. Received ${printSuccess(
 								`${received.join(' ')}`
 							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the provided ${printError(getTag(htmlElement))} element to have ${printError(
 								'EXACTLY'
 							)} defined classes ${printError(`${expected.join(' ')}`)}. Received ${printError(
@@ -63,23 +63,19 @@ export function toHaveClassName() {
 			if (expected.length > 0) {
 				result.pass = isSubset(expected, received);
 				result.message = result.pass
-					? `💯 ${printSecSuccess(
-							` Expected the provided ${printSuccess(
-								getTag(htmlElement)
-							)} element to have class ${printSuccess(expected.join(' '))}. Received ${printSuccess(
-								received.join(' ')
-							)}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							` Expected the provided ${printSuccess(getTag(htmlElement))} element to have class ${printSuccess(
+								expected.join(' ')
+							)}. Received ${printSuccess(received.join(' '))}.`
 					  )}`
-					: `😨 ${printSecError(
-							` Expected the provided ${printError(
-								getTag(htmlElement)
-							)} element to have class ${printError(expected.join(' '))}. Received ${printError(
-								received.join(' ')
-							)}.`
+					: `${printError('FAILED')} ${printSecError(
+							` Expected the provided ${printError(getTag(htmlElement))} element to have class ${printError(
+								expected.join(' ')
+							)}. Received ${printError(received.join(' '))}.`
 					  )}`;
 			} else {
 				result.pass = false;
-				result.message = `🤔 ${printSecWarning(`At least one expected class must be provided.`)}`;
+				result.message = `${printError('FAILED')} ${printSecWarning(`At least one expected class must be provided.`)}`;
 			}
 			return result;
 		},
@@ -92,14 +88,14 @@ export function toHaveClassName() {
 			if (options.exact) {
 				result.pass = !isSubset(expected, received) || expected.length !== received.length;
 				result.message = result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the provided ${printSuccess(
-								getTag(htmlElement)
-							)} element not to have ${printSuccess('EXACTLY')} defined classes ${printSuccess(
-								`${expected.join(' ')}`
-							)}. Received ${printSuccess(`${received.join(' ')}`)}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the provided ${printSuccess(getTag(htmlElement))} element not to have ${printSuccess(
+								'EXACTLY'
+							)} defined classes ${printSuccess(`${expected.join(' ')}`)}. Received ${printSuccess(
+								`${received.join(' ')}`
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the provided ${printError(getTag(htmlElement))} element not to have ${printError(
 								'EXACTLY'
 							)} defined classes ${printError(`${expected.join(' ')}`)}. Received ${printError(
@@ -111,29 +107,25 @@ export function toHaveClassName() {
 			if (expected.length > 0) {
 				result.pass = !isSubset(expected, received);
 				result.message = result.pass
-					? `💯 ${printSecSuccess(
-							` Expected the provided ${printSuccess(
-								getTag(htmlElement)
-							)} element not to have class ${printSuccess(expected.join(' '))}. Received ${printSuccess(
-								received.join(' ')
-							)}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							` Expected the provided ${printSuccess(getTag(htmlElement))} element not to have class ${printSuccess(
+								expected.join(' ')
+							)}. Received ${printSuccess(received.join(' '))}.`
 					  )}`
-					: `😨 ${printSecError(
-							` Expected the provided ${printError(
-								getTag(htmlElement)
-							)} element not to have class ${printError(expected.join(' '))}. Received ${printError(
-								received.join(' ')
-							)}.`
+					: `${printError('FAILED')} ${printSecError(
+							` Expected the provided ${printError(getTag(htmlElement))} element not to have class ${printError(
+								expected.join(' ')
+							)}. Received ${printError(received.join(' '))}.`
 					  )}`;
 			} else {
 				result.pass = received.length === 0;
 				result.message = result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element not to have classes ${printSuccess(
-								'(any)'
-							)}.\nReceived: ${printSuccess(received.join(' '))}`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element not to have classes ${printSuccess('(any)')}.\nReceived: ${printSuccess(
+								received.join(' ')
+							)}`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element not to have classes ${printError('(any)')}.\nReceived: ${printError(
 								received.join(' ')
 							)}`

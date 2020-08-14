@@ -20,21 +20,15 @@ export function toHaveTextContent() {
 			result.pass = !checkingWithEmptyString && providedArgs && matches(textContent, checkWith);
 			result.message =
 				checkingWithEmptyString || !providedArgs
-					? `🤔 ${printSecWarning(
-							`Checking with an empty string will always match. Try using ${printSuccess(
-								'.toBeEmptyDOMElement()'
-							)}.`
+					? `${printError('FAILED')} ${printSecWarning(
+							`Checking with an empty string will always match. Try using ${printSuccess('.toBeEmptyDOMElement()')}.`
 					  )}`
 					: result.pass
-					? `💯 ${printSecSuccess(
-							`Expected ${printSuccess(`'${htmlElement.textContent}'`)} to match ${printSuccess(
-								`'${checkWith}'`
-							)}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected ${printSuccess(`'${htmlElement.textContent}'`)} to match ${printSuccess(`'${checkWith}'`)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected ${printError(`'${htmlElement.textContent}'`)} to match ${printError(
-								`'${checkWith}'`
-							)}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected ${printError(`'${htmlElement.textContent}'`)} to match ${printError(`'${checkWith}'`)}.`
 					  )}`;
 			return result;
 		},
@@ -55,21 +49,15 @@ export function toHaveTextContent() {
 			result.pass = !checkingWithEmptyString && providedArgs && !matches(textContent, checkWith);
 			result.message =
 				checkingWithEmptyString || !providedArgs
-					? `🤔 ${printSecWarning(
-							`Checking with an empty string will always match. Try using ${printSuccess(
-								'.toBeEmptyDOMElement()'
-							)}.`
+					? `${printError('FAILED')} ${printSecWarning(
+							`Checking with an empty string will always match. Try using ${printSuccess('.toBeEmptyDOMElement()')}.`
 					  )}`
 					: result.pass
-					? `💯 ${printSecSuccess(
-							`Expected ${printSuccess(`'${htmlElement.textContent}'`)} not to match ${printSuccess(
-								`'${checkWith}'`
-							)}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected ${printSuccess(`'${htmlElement.textContent}'`)} not to match ${printSuccess(`'${checkWith}'`)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected ${printError(`'${htmlElement.textContent}'`)} not to match ${printError(
-								`'${checkWith}'`
-							)}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected ${printError(`'${htmlElement.textContent}'`)} not to match ${printError(`'${checkWith}'`)}.`
 					  )}`;
 			return result;
 		},

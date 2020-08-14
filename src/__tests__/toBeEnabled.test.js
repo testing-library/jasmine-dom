@@ -47,9 +47,7 @@ describe('.toBeEnabled()', () => {
 		const { message: nestedOptGroupMessage, pass: nestedOptGroupPass } = compare(queryByTestId('nested-optgroup'));
 		const { message: nestedOptionMessage, pass: nestedOptionPass } = compare(queryByTestId('nested-option'));
 		const { message: anchorMessage, pass: anchorPass } = negativeCompare(queryByTestId('anchor'));
-		const { message: nestedAnchorMessage, pass: nestedAnchorPass } = negativeCompare(
-			queryByTestId('nested-anchor')
-		);
+		const { message: nestedAnchorMessage, pass: nestedAnchorPass } = negativeCompare(queryByTestId('nested-anchor'));
 
 		expect(buttonPass).toBeFalse();
 		expect(buttonMessage).toMatch(/Expected the element.*to be enabled and it.*isn't enabled.*\./);

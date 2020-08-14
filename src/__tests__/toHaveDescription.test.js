@@ -120,7 +120,9 @@ describe('.toHaveDescription', () => {
 		);
 		const { message: positiveTargetMessage, pass: positiveTargetPass } = compare(targetElement, 'whatever');
 
-		expect(() => compare(unexistentElement, 'The description')).toThrowError(/🤔/);
+		expect(() => compare(unexistentElement, 'The description')).toThrowError(
+			/FAILED.*Received element must be an HTMLElement or an SVGElement.*/
+		);
 
 		expect(negativeTargetPass).toBeFalse();
 		expect(negativeTargetMessage).toMatch(/Expected.*not to have description.*/);

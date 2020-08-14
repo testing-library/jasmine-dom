@@ -11,9 +11,7 @@ function parseCSS(css, ...args) {
 		throw new InvalidCSSError(
 			{
 				css,
-				message: printSecError(
-					`Syntax error parsing expected styles: ${reason} on ${printError(`line ${line}`)}`
-				),
+				message: printSecError(`Syntax error parsing expected styles: ${reason} on ${printError(`line ${line}`)}`),
 			},
 			...args
 		);
@@ -84,14 +82,12 @@ export function toHaveStyle() {
 			const received = getComputedStyle(htmlElement);
 			result.pass = styleIsSubset(expected, received);
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
-						`Expected the provided ${printSuccess(
-							getTag(htmlElement)
-						)} element to have styles:\n${printSuccess(styles)}\nReceived:\n\n${printSuccess(
-							expectedStyleDiff(expected, received)
-						)}`
+				? `${printSuccess('PASSED')} ${printSecSuccess(
+						`Expected the provided ${printSuccess(getTag(htmlElement))} element to have styles:\n${printSuccess(
+							styles
+						)}\nReceived:\n\n${printSuccess(expectedStyleDiff(expected, received))}`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the provided ${printError(getTag(htmlElement))} element to have styles:\n${printError(
 							styles
 						)}\nReceived:\n\n${printError(expectedStyleDiff(expected, received))}`
@@ -108,19 +104,15 @@ export function toHaveStyle() {
 			const received = getComputedStyle(htmlElement);
 			result.pass = !styleIsSubset(expected, received);
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
-						`Expected the provided ${printSuccess(
-							getTag(htmlElement)
-						)} element not to have styles:\n${printSuccess(styles)}\nReceived:\n\n${printSuccess(
-							expectedStyleDiff(expected, received)
-						)}`
+				? `${printSuccess('PASSED')} ${printSecSuccess(
+						`Expected the provided ${printSuccess(getTag(htmlElement))} element not to have styles:\n${printSuccess(
+							styles
+						)}\nReceived:\n\n${printSuccess(expectedStyleDiff(expected, received))}`
 				  )}`
-				: `😨 ${printSecError(
-						`Expected the provided ${printError(
-							getTag(htmlElement)
-						)} element not to have styles:\n${printError(styles)}\nReceived:\n\n${printError(
-							expectedStyleDiff(expected, received)
-						)}`
+				: `${printError('FAILED')} ${printSecError(
+						`Expected the provided ${printError(getTag(htmlElement))} element not to have styles:\n${printError(
+							styles
+						)}\nReceived:\n\n${printError(expectedStyleDiff(expected, received))}`
 				  )}`;
 			return result;
 		},

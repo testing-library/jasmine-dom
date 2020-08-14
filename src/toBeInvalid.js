@@ -29,12 +29,12 @@ export function toBeInvalid() {
 			result.pass = isInvalid;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be invalid, and it ${printSuccess('is invalid')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be invalid, and it ${printSuccess(
+								'is invalid'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} to be invalid, and it ${printError(
 								"isn't invalid"
 							)}.`
@@ -49,15 +49,15 @@ export function toBeInvalid() {
 			result.pass = isValid;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} not to be invalid, and it ${printSuccess("isn't invalid")}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} not to be invalid, and it ${printSuccess(
+								"isn't invalid"
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} not to be invalid, and it ${printError('is invalid')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} not to be invalid, and it ${printError(
+								'is invalid'
+							)}.`
 					  )}`
 			}`;
 			return result;
@@ -74,12 +74,12 @@ export function toBeValid() {
 			result.pass = isValid;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be valid, and it ${printSuccess('is valid')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be valid, and it ${printSuccess(
+								'is valid'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`Expected the element ${printError(getTag(htmlElement))} to be valid, and it ${printError(
 								"isn't valid"
 							)}.`
@@ -94,15 +94,15 @@ export function toBeValid() {
 			result.pass = isInvalid;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} not to be valid, and it ${printSuccess("isn't valid")}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} not to be valid, and it ${printSuccess(
+								"isn't valid"
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} not to be valid, and it ${printError('is valid')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} not to be valid, and it ${printError(
+								'is valid'
+							)}.`
 					  )}`
 			}`;
 			return result;

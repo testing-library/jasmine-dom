@@ -24,7 +24,7 @@ export function toBePartiallyChecked() {
 			let result = {};
 			if (!isValidCheckbox(htmlElement) && !isValidAriaElement(htmlElement)) {
 				result.pass = false;
-				result.message = `🤔 ${printSecWarning(
+				result.message = `${printError('FAILED')} ${printSecWarning(
 					`Only inputs with type="checkbox" or elements with role="checkbox" and a valid aria-checked attribute can be used with ${printWarning(
 						'.toBePartiallyChecked()'
 					)}. Use ${printSuccess('.toHaveValue()')} instead.`
@@ -34,15 +34,15 @@ export function toBePartiallyChecked() {
 			result.pass = isPartiallyChecked(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the element ${printSuccess(
-								getTag(htmlElement)
-							)} to be partially checked, and it ${printSuccess('is partially checked')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the element ${printSuccess(getTag(htmlElement))} to be partially checked, and it ${printSuccess(
+								'is partially checked'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} to be partially checked, and it ${printError("isn't partially checked")}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} to be partially checked, and it ${printError(
+								"isn't partially checked"
+							)}.`
 					  )}`
 			}`;
 			return result;
@@ -52,7 +52,7 @@ export function toBePartiallyChecked() {
 			let result = {};
 			if (!isValidCheckbox(htmlElement) && !isValidAriaElement(htmlElement)) {
 				result.pass = false;
-				result.message = `🤔 ${printSecWarning(
+				result.message = `${printError('FAILED')} ${printSecWarning(
 					`Only inputs with type="checkbox" or elements with role="checkbox" and a valid aria-checked attribute can be used with ${printWarning(
 						'.toBePartiallyChecked()'
 					)}. Use ${printSuccess('.toHaveValue()')} instead.`
@@ -62,15 +62,15 @@ export function toBePartiallyChecked() {
 			result.pass = !isPartiallyChecked(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
+					? `${printSuccess('PASSED')} ${printSecSuccess(
 							`Expected the element ${printSuccess(
 								getTag(htmlElement)
 							)} not to be partially checked, and it ${printSuccess("isn't partially checked")}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the element ${printError(
-								getTag(htmlElement)
-							)} not to be partially checked, and it ${printError('is partially checked')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the element ${printError(getTag(htmlElement))} not to be partially checked, and it ${printError(
+								'is partially checked'
+							)}.`
 					  )}`
 			}`;
 			return result;

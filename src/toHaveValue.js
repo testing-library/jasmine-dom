@@ -9,7 +9,7 @@ export function toHaveValue() {
 			if (getTag(htmlElement) === 'input' && ['checkbox', 'radio'].includes(htmlElement.type)) {
 				throw new Error(
 					printSecWarning(
-						`🤔 input elements with ${printWarning(
+						`${printError('FAILED')} input elements with ${printWarning(
 							'type="checkbox/radio"'
 						)} cannot be used with ${printWarning('.toHaveValue()')}. Use ${printSuccess(
 							'.toBeChecked()'
@@ -29,12 +29,12 @@ export function toHaveValue() {
 				? isEqualWith(receivedValue, expectedValue, compareArraysAsSet)
 				: Boolean(receivedValue);
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
+				? `${printSuccess('PASSED')} ${printSecSuccess(
 						`Expected the provided ${printSuccess(getTag(htmlElement))} to have value ${printSuccess(
 							`${expectsValue ? expectedTypedValue : '(any)'}`
 						)}.\nReceived ${printSuccess(receivedTypedValue)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the provided ${printError(getTag(htmlElement))} to have value ${printError(
 							`${expectsValue ? expectedTypedValue : '(any)'}`
 						)}.\nReceived ${printError(receivedTypedValue)}.`
@@ -47,7 +47,7 @@ export function toHaveValue() {
 			if (getTag(htmlElement) === 'input' && ['checkbox', 'radio'].includes(htmlElement.type)) {
 				throw new Error(
 					printSecWarning(
-						`🤔 input elements with ${printWarning(
+						`${printError('FAILED')} input elements with ${printWarning(
 							'type="checkbox/radio"'
 						)} cannot be used with ${printWarning('.toHaveValue()')}. Use ${printSuccess(
 							'.toBeChecked()'
@@ -67,12 +67,12 @@ export function toHaveValue() {
 				? !isEqualWith(receivedValue, expectedValue, compareArraysAsSet)
 				: Boolean(!receivedValue);
 			result.message = result.pass
-				? `💯 ${printSecSuccess(
+				? `${printSuccess('PASSED')} ${printSecSuccess(
 						`Expected the provided ${printSuccess(getTag(htmlElement))} not to have value ${printSuccess(
 							`${expectsValue ? expectedTypedValue : '(any)'}`
 						)}.\nReceived ${printSuccess(receivedTypedValue)}.`
 				  )}`
-				: `😨 ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the provided ${printError(getTag(htmlElement))} not to have value ${printError(
 							`${expectsValue ? expectedTypedValue : '(any)'}`
 						)}.\nReceived ${printError(receivedTypedValue)}.`

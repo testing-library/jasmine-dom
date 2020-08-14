@@ -11,12 +11,12 @@ export function toBeInTheDocument() {
 			result.pass = htmlElement === null ? false : htmlElement.ownerDocument.contains(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the ${printSuccess(
-								getTag(htmlElement)
-							)} element to be in the document and it ${printSuccess('is in the document')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the ${printSuccess(getTag(htmlElement))} element to be in the document and it ${printSuccess(
+								'is in the document'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
+					: `${printError('FAILED')} ${printSecError(
 							`The ${printError(getTag(htmlElement))} element provided ${printError(
 								'could not be found in the document'
 							)}.`
@@ -32,15 +32,13 @@ export function toBeInTheDocument() {
 			result.pass = htmlElement === null ? true : !htmlElement.ownerDocument.contains(htmlElement);
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
+					? `${printSuccess('PASSED')} ${printSecSuccess(
 							`Expected the document not to contain the provided ${printSuccess(
 								htmlElement !== null ? getTag(htmlElement) : null
 							)} element.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the document not to contain the provided ${printError(
-								getTag(htmlElement)
-							)} element.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the document not to contain the provided ${printError(getTag(htmlElement))} element.`
 					  )}`
 			}`;
 			return result;

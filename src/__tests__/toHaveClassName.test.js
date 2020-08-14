@@ -46,10 +46,7 @@ describe('.toHaveClassName', () => {
 		});
 
 		it('negative test cases', () => {
-			const { message: negativeDeleteBtnMessage, pass: negativeDeleteBtnPass } = negativeCompare(
-				deleteButton,
-				'btn'
-			);
+			const { message: negativeDeleteBtnMessage, pass: negativeDeleteBtnPass } = negativeCompare(deleteButton, 'btn');
 			const { message: negativeDeleteBtnDangerMessage, pass: negativeDeleteBtnDangerPass } = negativeCompare(
 				deleteButton,
 				'btn-danger'
@@ -64,10 +61,10 @@ describe('.toHaveClassName', () => {
 				'btn',
 				'extra xtra'
 			);
-			const {
-				message: negativeDeleteBtnBtnDangerMessage,
-				pass: negativeDeleteBtnBtnDangerPass,
-			} = negativeCompare(deleteButton, 'btn btn-danger');
+			const { message: negativeDeleteBtnBtnDangerMessage, pass: negativeDeleteBtnBtnDangerPass } = negativeCompare(
+				deleteButton,
+				'btn btn-danger'
+			);
 			const {
 				message: negativeDeleteBtnAndBtnDangerMessage,
 				pass: negativeDeleteBtnAndBtnDangerPass,
@@ -188,13 +185,9 @@ describe('.toHaveClassName', () => {
 		});
 
 		it('negative test cases', () => {
-			const { message: negativeAloneExactMessage, pass: negativeAloneExactPass } = negativeCompare(
-				oneClass,
-				'alone',
-				{
-					exact: true,
-				}
-			);
+			const { message: negativeAloneExactMessage, pass: negativeAloneExactPass } = negativeCompare(oneClass, 'alone', {
+				exact: true,
+			});
 			const { message: positiveAloneFooExactMessage, pass: positiveAloneFooExactPass } = compare(
 				oneClass,
 				'alone',

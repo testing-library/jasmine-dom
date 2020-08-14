@@ -25,8 +25,7 @@ function isElementRequiredByARIA(htmlElement) {
 		htmlElement.hasAttribute('aria-required') &&
 		htmlElement.getAttribute('aria-required') === 'true' &&
 		(REQUIRED_ARIA_FORM_TAGS.includes(getTag(htmlElement)) ||
-			(htmlElement.hasAttribute('role') &&
-				REQUIRED_SUPPORTED_ARIA_ROLES.includes(htmlElement.getAttribute('role'))))
+			(htmlElement.hasAttribute('role') && REQUIRED_SUPPORTED_ARIA_ROLES.includes(htmlElement.getAttribute('role'))))
 	);
 }
 
@@ -42,15 +41,15 @@ export function toBeRequired() {
 			result.pass = isRequired;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
-							`Expected the provided ${printSuccess(
-								getTag(htmlElement)
-							)} element to be required, and it ${printSuccess('is required')}.`
+					? `${printSuccess('PASSED')} ${printSecSuccess(
+							`Expected the provided ${printSuccess(getTag(htmlElement))} element to be required, and it ${printSuccess(
+								'is required'
+							)}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the provided ${printError(
-								getTag(htmlElement)
-							)} element to be required, and it ${printError("isn't required")}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the provided ${printError(getTag(htmlElement))} element to be required, and it ${printError(
+								"isn't required"
+							)}.`
 					  )}`
 			}`;
 			return result;
@@ -65,15 +64,15 @@ export function toBeRequired() {
 			result.pass = !isRequired;
 			result.message = `${
 				result.pass
-					? `💯 ${printSecSuccess(
+					? `${printSuccess('PASSED')} ${printSecSuccess(
 							`Expected the provided ${printSuccess(
 								getTag(htmlElement)
 							)} element not to be required, and it ${printSuccess("isn't required")}.`
 					  )}`
-					: `😨 ${printSecError(
-							`Expected the provided ${printError(
-								getTag(htmlElement)
-							)} element not to be required, and it ${printError('is required')}.`
+					: `${printError('FAILED')} ${printSecError(
+							`Expected the provided ${printError(getTag(htmlElement))} element not to be required, and it ${printError(
+								'is required'
+							)}.`
 					  )}`
 			}`;
 			return result;
