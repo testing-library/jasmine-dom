@@ -149,10 +149,10 @@ MIT
 
 <!-- BADGES -->
 
-[build-badge]: https://travis-ci.org/brrianalexis/jasmine-dom.svg?branch=master
-[build]: https://travis-ci.org/brrianalexis/jasmine-dom
-[coverage-badge]: https://codecov.io/gh/brrianalexis/jasmine-dom/branch/master/graph/badge.svg
-[coverage]: https://codecov.io/gh/brrianalexis/jasmine-dom
+[build-badge]: https://travis-ci.org/testing-library/jasmine-dom.svg?branch=master
+[build]: https://travis-ci.org/testing-library/jasmine-dom
+[coverage-badge]: https://codecov.io/gh/testing-library/jasmine-dom/branch/master/graph/badge.svg
+[coverage]: https://codecov.io/gh/testing-library/jasmine-dom
 [version-badge]: https://img.shields.io/npm/v/@testing-library/jasmine-dom?style=flat-square
 [package]: https://www.npmjs.com/package/@testing-library/jasmine-dom
 [downloads-badge]: https://img.shields.io/npm/dm/@testing-library/jasmine-dom?style=flat-square
