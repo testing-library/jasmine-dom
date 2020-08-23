@@ -65,13 +65,13 @@ This module is distributed via [npm][npm] which is bundled with [node][node] and
 Using npm:
 
 ```
-npm install --save-dev jasmine-dom
+npm install --save-dev @testing-library/jasmine-dom
 ```
 
 or for installation using [yarn][yarn] package manager:
 
 ```
-yarn add --dev jasmine-dom
+yarn add --dev @testing-library/jasmine-dom
 ```
 
 ## Usage
@@ -89,10 +89,10 @@ Example:
 }
 ```
 
-Make a new file inside that directory, import jasmine-dom and add the matchers like so:
+Make a new file inside that directory, import @testing-library/jasmine-dom and add the matchers like so:
 
 ```javascript
-import JasmineDOM from 'jasmine-dom';
+import JasmineDOM from '@testing-library/jasmine-dom';
 
 beforeAll(() => {
 	jasmine.getEnv().addMatchers(JasmineDOM);

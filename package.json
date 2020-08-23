@@ -52,9 +52,6 @@
 		"onchange": "^7.0.2",
 		"prettier": "^2.0.5"
 	},
-	"publishConfig": {
-		"access": "public"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/testing-library/jasmine-dom"
