@@ -1,5 +1,5 @@
 {
-	"name": "jasmine-dom",
+	"name": "@testing-library/jasmine-dom",
 	"version": "0.0.0-semantically-released",
 	"description": "Custom Jasmine matchers for testing DOM elements",
 	"main": "./dist/index.js",
