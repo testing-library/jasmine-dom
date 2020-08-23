@@ -1,3 +1,3 @@
-import { JasmineDOM } from './src/matchers';
+import JasmineDOM from './src';
 
 export default JasmineDOM;

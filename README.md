@@ -6,11 +6,10 @@
     height="80"
     width="80"
     alt="sloth"
-    src="https://github.com/brrianalexis/jasmine-dom/blob/master/other/sloth.png?raw=true"  
+    src="https://github.com/testing-library/jasmine-dom/blob/master/other/sloth.png?raw=true"  
   >
 </a>
 
-<p>UNPUBLISHED - Under development</p>
 <p>Custom Jasmine matchers to test the state of the DOM</p>
 
 </div>
@@ -19,6 +18,7 @@
 
 [![Build Status][build-badge]][build]
 [![Code Coverage][coverage-badge]][coverage]
+[![semantic-release][semantic-release-badge]][semantic-release]
 [![version][version-badge]][package]
 [![downloads][downloads-badge]][npmtrends]
 [![MIT License][license-badge]][license]
@@ -154,6 +154,8 @@ MIT
 [coverage-badge]: https://codecov.io/gh/testing-library/jasmine-dom/branch/master/graph/badge.svg
 [coverage]: https://codecov.io/gh/testing-library/jasmine-dom
 [version-badge]: https://img.shields.io/npm/v/@testing-library/jasmine-dom?style=flat-square
+[semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release]: https://github.com/semantic-release/semantic-release
 [package]: https://www.npmjs.com/package/@testing-library/jasmine-dom
 [downloads-badge]: https://img.shields.io/npm/dm/@testing-library/jasmine-dom?style=flat-square
 [npmtrends]: http://www.npmtrends.com/@testing-library/jasmine-dom
@@ -167,7 +169,7 @@ MIT
 [github-watch]: https://github.com/testing-library/jasmine-dom/watchers
 [github-star-badge]: https://img.shields.io/github/stars/testing-library/jasmine-dom?style=social
 [github-star]: https://github.com/testing-library/jasmine-dom/stargazers
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20jest-dom%20by%20%40brrianalexis%20https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom%20%F0%9F%91%8D
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20jasmine-dom%20by%20%40brrianalexis%20https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom
 [emojis]: https://allcontributors.org/docs/en/emoji-key
 [all-contributors]: https://github.com/all-contributors/all-contributors

@@ -17,7 +17,7 @@ import { toBeInTheDocument } from './toBeInTheDocument';
 import { toBeVisible } from './toBeVisible';
 import { toHaveStyle } from './toHaveStyle';
 
-export const JasmineDOM = {
+const JasmineDOM = {
 	toHaveAttribute,
 	toHaveTextContent,
 	toHaveClassName,
@@ -39,3 +39,5 @@ export const JasmineDOM = {
 	toBeVisible,
 	toHaveStyle,
 };
+
+export default JasmineDOM;
