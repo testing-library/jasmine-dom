@@ -29,7 +29,7 @@ export function toHaveDescription(util) {
 							`'${checkWith}'`
 						)}. Received ${printSuccess(`'${description}'`)}.`
 				  )}`
-				: `${printSuccess('FAILED')} ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(htmlElement))} element to have description ${printError(
 							`'${checkWith}'`
 						)}. Received ${printError(`'${description}'`)}.`
@@ -62,7 +62,7 @@ export function toHaveDescription(util) {
 							`'${checkWith}'`
 						)}. Received ${printSuccess(`'${description}'`)}.`
 				  )}`
-				: `${printSuccess('FAILED')} ${printSecError(
+				: `${printError('FAILED')} ${printSecError(
 						`Expected the ${printError(getTag(htmlElement))} element not to have description ${printError(
 							`'${checkWith}'`
 						)}. Received ${printError(`'${description}'`)}.`
