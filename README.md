@@ -916,8 +916,7 @@ case-sensitive match to the description text.
 To perform a case-insensitive match, you can use a `RegExp` with the `/i`
 modifier.
 
-To perform a partial match, you can pass a `RegExp` or use
-`expect.stringContaining("partial string")`.
+To perform a partial match, you can pass a `RegExp`.
 
 #### Examples
 
@@ -937,7 +936,6 @@ const closeButton = getByRole('button', {name: 'Close'})
 
 expect(closeButton).toHaveDescription('Closing will discard any changes')
 expect(closeButton).toHaveDescription(/will discard/) // to partially match
-expect(closeButton).toHaveDescription(expect.stringContaining('will discard')) // to partially match
 expect(closeButton).toHaveDescription(/^closing/i) // to use case-insensitive match
 expect(closeButton).not.toHaveDescription('Other description')
 
