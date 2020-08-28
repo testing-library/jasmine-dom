@@ -719,10 +719,10 @@ For all other form elements, the value is matched using the same algorithm as in
 ##### Using DOM Testing Library
 
 ```javascript
-const textInput = getByTestId('input-text')
-const numberInput = getByTestId('input-number')
-const emptyInput = getByTestId('input-empty')
-const selectInput = getByTestId('select-number')
+const textInput = screen.getByTestId('input-text')
+const numberInput = screen.getByTestId('input-number')
+const emptyInput = screen.getByTestId('input-empty')
+const selectInput = screen.getByTestId('select-number')
 
 expect(textInput).toHaveValue('text')
 expect(numberInput).toHaveValue(5)
