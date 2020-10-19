@@ -7,5 +7,30 @@
     ],
     "imageSize": 100,
     "commit": false,
-    "contributors": []
+    "contributors": [
+        {
+          "login": "kentcdodds",
+          "name": "Kent C. Dodds",
+          "avatar_url": "https://avatars.githubusercontent.com/u/1500684?v=3",
+          "profile": "https://kentcdodds.com",
+          "contributions": [
+            "infra",
+          ]
+        },
+        {
+          "login": "brrianalexis",
+          "name": "Brian Alexis",
+          "avatar_url": "https://avatars2.githubusercontent.com/u/51463930?v=4",
+          "profile": "https://github.com/brrianalexis",
+          "contributions": [
+            "ideas",
+            "code",
+            "doc",
+            "test"
+          ]
+        }
+    ],
+    "repoHost": "https://github.com",
+    "contributorsPerLine": 7,
+    "skipCi": false
 }
