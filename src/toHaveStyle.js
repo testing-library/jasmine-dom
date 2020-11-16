@@ -30,18 +30,23 @@ function parseJStoCSS(document, styles) {
 
 function getStyleDeclaration(document, css) {
 	const styles = {};
+
+	//	The next block is necessary to normalize colors
 	const copy = document.createElement('div');
-	Object.keys(css).forEach(property => {
-		copy.style[property] = css[property];
-		styles[property] = copy.style[property];
+	Object.keys(css).forEach(prop => {
+		copy.style[prop] = css[prop];
+		styles[prop] = copy.style[prop];
 	});
+
 	return styles;
 }
 
 function styleIsSubset(styles, computedStyle) {
 	return (
 		!!Object.keys(styles).length &&
-		Object.entries(styles).every(([prop, value]) => computedStyle.getPropertyValue(prop.toLowerCase()) === value)
+		Object.entries(styles).every(
+			([prop, value]) => computedStyle[prop] === value || computedStyle.getPropertyValue(prop.toLowerCase()) === value
+		)
 	);
 }
 
@@ -58,7 +63,7 @@ function printoutStyles(styles) {
 
 function expectedStyleDiff(expected, computedStyles) {
 	const received = Array.from(computedStyles)
-		.filter(prop => expected[prop])
+		.filter(prop => expected[prop] !== undefined)
 		.reduce(
 			(obj, prop) =>
 				Object.assign(obj, {
