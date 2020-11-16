@@ -24,7 +24,7 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors][all-contributors-badge]](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
@@ -995,8 +995,8 @@ MIT
 
 <!-- BADGES -->
 
-[build-badge]: https://travis-ci.org/testing-library/jasmine-dom.svg?branch=master
-[build]: https://travis-ci.org/testing-library/jasmine-dom
+[build-badge]: https://img.shields.io/github/workflow/status/testing-library/jasmine-dom/validate?logo=github&style=flat-square
+[build]: https://github.com/testing-library/jasmine-dom/actions?query=workflow%3Avalidate
 [coverage-badge]: https://codecov.io/gh/testing-library/jasmine-dom/branch/master/graph/badge.svg
 [coverage]: https://codecov.io/gh/testing-library/jasmine-dom
 [version-badge]: https://img.shields.io/npm/v/@testing-library/jasmine-dom?style=flat-square
@@ -1019,6 +1019,7 @@ MIT
 [twitter-badge]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom
 [emojis]: https://allcontributors.org/docs/en/emoji-key
 [all-contributors]: https://github.com/all-contributors/all-contributors
+[all-contributors-badge]: https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square
 [guiding-principle]: https://testing-library.com/docs/guiding-principles
 [discord-badge]: https://img.shields.io/discord/723559267868737556.svg?color=7389D8&labelColor=6A7EC2&logo=discord&logoColor=ffffff&style=flat-square
 [discord]: https://discord.gg/c6JN9fM
