@@ -1,6 +1,6 @@
+import cssParse from 'css/lib/parse';
 import { checkHtmlElement, getTag, InvalidCSSError } from './utils';
 import { printSecSuccess, printSuccess, printSecError, printError } from './printers';
-import cssParse from 'css/lib/parse';
 
 function parseCSS(css, ...args) {
 	const ast = cssParse(`selector { ${css} }`, {
