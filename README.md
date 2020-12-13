@@ -971,21 +971,9 @@ Thanks goes to these people ([emoji key][emojis])
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4" width="100px;" alt=""/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
     <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;" alt=""/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://github.com/brrianalexis"><img src="https://avatars2.githubusercontent.com/u/51463930?v=4" width="100px;" alt=""/><br /><sub><b>Brian Alexis</b></sub></a><br /><a href="#ideas-brrianalexis" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=kentcdodds" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4" width="100px;" alt=""/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
   </tr>
 </table>
 
