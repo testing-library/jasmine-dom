@@ -27,7 +27,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"@babel/runtime": "^7.12.5",
-		"@types/testing-library__jasmine-dom": "^1.0.2",
+		"@types/testing-library__jasmine-dom": "^1.0.3",
 		"aria-query": "^4.2.2",
 		"chalk": "^4.1.0",
 		"css": "^3.0.0",
@@ -35,23 +35,23 @@
 		"lodash": "^4.17.20"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.12.1",
-		"@babel/core": "^7.12.3",
-		"@babel/preset-env": "^7.12.1",
-		"@babel/register": "^7.12.1",
-		"@types/jasmine": "^3.6.1",
+		"@babel/cli": "^7.12.10",
+		"@babel/core": "^7.12.10",
+		"@babel/preset-env": "^7.12.10",
+		"@babel/register": "^7.12.10",
+		"@types/jasmine": "^3.6.2",
 		"babel-plugin-istanbul": "^6.0.0",
-		"eslint": "^7.13.0",
+		"eslint": "^7.15.0",
 		"eslint-config-prettier": "^7.0.0",
-		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-prettier": "^3.2.0",
 		"jasmine": "^3.6.3",
 		"jasmine-reporters": "^2.3.2",
 		"jasmine-spec-reporter": "^6.0.0",
 		"jsdom": "^16.4.0",
-		"kcd-scripts": "^7.0.3",
+		"kcd-scripts": "^7.5.3",
 		"nyc": "^15.1.0",
 		"onchange": "^7.1.0",
-		"prettier": "^2.1.2"
+		"prettier": "^2.2.1"
 	},
 	"repository": {
 		"type": "git",
