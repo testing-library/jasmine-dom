@@ -1,4 +1,7 @@
 <div align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <h1>jasmine-dom</h1>
 
 <a href="https://www.joypixels.com/profiles/emoji/sloth/_/5.0">
@@ -963,6 +966,18 @@ For extending Jasmine's matchers outside the realm of DOM testing, [Jasmine-Matc
 ## Contributors
 
 Thanks goes to these people ([emoji key][emojis])
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4" width="100px;" alt=""/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
