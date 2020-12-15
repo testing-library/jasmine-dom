@@ -99,6 +99,8 @@ yarn add --dev @testing-library/jasmine-dom
 
 ## Usage
 
+### With JavaScript
+
 You should have a directory for helpers specified inside the helpers array in your `jasmine.json` file.
 Example:
 
@@ -122,7 +124,19 @@ beforeAll(() => {
 });
 ```
 
-That's it! You're good to go.
+### With Karma and TypeScript in an Angular project
+
+Add to the existing `types` array in `tsconfig.spec.json`: `"@testing-library/jasmine-dom"`
+
+In your tests setup file, import jasmine-dom like so:
+
+```typescript
+import JasmineDOM from '@testing-library/jasmine-dom/dist';
+
+beforeAll(() => {
+  jasmine.getEnv().addMatchers(JasmineDOM);
+});
+```
 
 ## Matchers
 
