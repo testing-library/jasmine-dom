@@ -127,10 +127,10 @@ That's it! You're good to go.
 ## Matchers
 
 This library is meant to be a Jasmine version of `@testing-library/jest-dom` library. As such, it provides the same set of matchers and the same functionality for each one, with a couple of minor diferences:
-- toBeEmpty() is not included, in favor of toBeEmptyDOMElement()
-- toBeInTheDOM() is not included, since it's deprecated
-- toContainHTML() is not included
-- toHaveClass() is renamed to toHaveClassName() to prevent name collision with Jasmine's toHaveClass()
+- `toBeEmpty()` is not included, in favor of `toBeEmptyDOMElement()`
+- `toBeInTheDOM()` is not included, since it's deprecated
+- `toContainHTML()` is not included
+- `toHaveClass()` is renamed as `toHaveClassName()` to prevent name collision with Jasmine's `toHaveClass()`
 
 ### `toBeDisabled`
 
