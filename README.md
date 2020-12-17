@@ -124,11 +124,25 @@ beforeAll(() => {
 });
 ```
 
-### With Karma and TypeScript in an Angular project
+### With TypeScript
 
-Add to the existing `types` array in `tsconfig.spec.json`: `"@testing-library/jasmine-dom"`
+Add `"@testing-library/jasmine-dom"` to `types` in the tests `tsconfig` (e.g. `tsconfig.spec.json` in an Angular project).
 
-In your tests setup file, import jasmine-dom like so:
+Example:
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "jasmine",
+      "node",
+      "@testing-library/jasmine-dom"
+    ]
+  }
+}
+```
+
+In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom and add the matchers like so:
 
 ```typescript
 import JasmineDOM from '@testing-library/jasmine-dom/dist';
