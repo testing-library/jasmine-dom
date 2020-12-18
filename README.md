@@ -99,6 +99,8 @@ yarn add --dev @testing-library/jasmine-dom
 
 ## Usage
 
+### With JavaScript
+
 You should have a directory for helpers specified inside the helpers array in your `jasmine.json` file.
 Example:
 
@@ -122,7 +124,33 @@ beforeAll(() => {
 });
 ```
 
-That's it! You're good to go.
+### With TypeScript
+
+Add `"@testing-library/jasmine-dom"` to `types` in the tests `tsconfig` (e.g. `tsconfig.spec.json` in an Angular project).
+
+Example:
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "jasmine",
+      "node",
+      "@testing-library/jasmine-dom"
+    ]
+  }
+}
+```
+
+In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom and add the matchers like so:
+
+```typescript
+import JasmineDOM from '@testing-library/jasmine-dom/dist';
+
+beforeAll(() => {
+  jasmine.getEnv().addMatchers(JasmineDOM);
+});
+```
 
 ## Matchers
 
