@@ -27,8 +27,11 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors][all-contributors-badge]](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 [![Discord][discord-badge]][discord]
@@ -132,13 +135,9 @@ Example:
 
 ```json
 {
-  "compilerOptions": {
-    "types": [
-      "jasmine",
-      "node",
-      "@testing-library/jasmine-dom"
-    ]
-  }
+	"compilerOptions": {
+		"types": ["jasmine", "node", "@testing-library/jasmine-dom"]
+	}
 }
 ```
 
@@ -148,13 +147,14 @@ In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom a
 import JasmineDOM from '@testing-library/jasmine-dom/dist';
 
 beforeAll(() => {
-  jasmine.getEnv().addMatchers(JasmineDOM);
+	jasmine.getEnv().addMatchers(JasmineDOM);
 });
 ```
 
 ## Matchers
 
 This library is meant to be a Jasmine version of `@testing-library/jest-dom` library. As such, it provides the same set of matchers and the same functionality for each one, with a couple of minor diferences:
+
 - `toBeEmpty()` is not included, in favor of `toBeEmptyDOMElement()`
 - `toBeInTheDOM()` is not included, since it's deprecated
 - `toContainHTML()` is not included
@@ -163,7 +163,7 @@ This library is meant to be a Jasmine version of `@testing-library/jest-dom` lib
 ### `toBeDisabled`
 
 ```typescript
-toBeDisabled()
+toBeDisabled();
 ```
 
 This allows you to check whether an element is disabled from the user's
@@ -186,9 +186,9 @@ According to the specification, the following elements can be
 ```
 
 ```javascript
-expect(getByTestId('button')).toBeDisabled()
-expect(getByTestId('input')).toBeDisabled()
-expect(getByText('link')).not.toBeDisabled()
+expect(getByTestId('button')).toBeDisabled();
+expect(getByTestId('input')).toBeDisabled();
+expect(getByText('link')).not.toBeDisabled();
 ```
 
 <hr />
@@ -196,7 +196,7 @@ expect(getByText('link')).not.toBeDisabled()
 ### `toBeEnabled`
 
 ```typescript
-toBeEnabled()
+toBeEnabled();
 ```
 
 This allows you to check whether an element is not disabled from the user's
@@ -210,7 +210,7 @@ your tests.
 ### `toBeEmptyDOMElement`
 
 ```typescript
-toBeEmptyDOMElement()
+toBeEmptyDOMElement();
 ```
 
 This allows you to assert whether an element has content or not.
@@ -222,8 +222,8 @@ This allows you to assert whether an element has content or not.
 ```
 
 ```javascript
-expect(getByTestId('empty')).toBeEmptyDOMElement()
-expect(getByTestId('not-empty')).not.toBeEmptyDOMElement()
+expect(getByTestId('empty')).toBeEmptyDOMElement();
+expect(getByTestId('not-empty')).not.toBeEmptyDOMElement();
 ```
 
 <hr />
@@ -231,7 +231,7 @@ expect(getByTestId('not-empty')).not.toBeEmptyDOMElement()
 ### `toBeInTheDocument`
 
 ```typescript
-toBeInTheDocument()
+toBeInTheDocument();
 ```
 
 This allows you to assert whether an element is present in the document or not.
@@ -239,20 +239,13 @@ This allows you to assert whether an element is present in the document or not.
 #### Examples
 
 ```html
-<span data-testid="html-element"><span>Html Element</span></span>
-<svg data-testid="svg-element"></svg>
+<span data-testid="html-element"><span>Html Element</span></span> <svg data-testid="svg-element"></svg>
 ```
 
 ```javascript
-expect(
-  getByTestId(document.documentElement, 'html-element'),
-).toBeInTheDocument()
-expect(
-  getByTestId(document.documentElement, 'svg-element'),
-).toBeInTheDocument()
-expect(
-  queryByTestId(document.documentElement, 'does-not-exist'),
-).not.toBeInTheDocument()
+expect(getByTestId(document.documentElement, 'html-element')).toBeInTheDocument();
+expect(getByTestId(document.documentElement, 'svg-element')).toBeInTheDocument();
+expect(queryByTestId(document.documentElement, 'does-not-exist')).not.toBeInTheDocument();
 ```
 
 > Note: This matcher does not find detached elements. The element must be added
@@ -264,7 +257,7 @@ expect(
 ### `toBeInvalid`
 
 ```typescript
-toBeInvalid()
+toBeInvalid();
 ```
 
 This allows you to check if an element, is currently invalid.
@@ -284,22 +277,22 @@ is `false`.
 <input data-testid="aria-invalid-false" aria-invalid="false" />
 
 <form data-testid="valid-form">
-  <input />
+	<input />
 </form>
 
 <form data-testid="invalid-form">
-  <input required />
+	<input required />
 </form>
 ```
 
 ```javascript
-expect(getByTestId('no-aria-invalid')).not.toBeInvalid()
-expect(getByTestId('aria-invalid')).toBeInvalid()
-expect(getByTestId('aria-invalid-value')).toBeInvalid()
-expect(getByTestId('aria-invalid-false')).not.toBeInvalid()
+expect(getByTestId('no-aria-invalid')).not.toBeInvalid();
+expect(getByTestId('aria-invalid')).toBeInvalid();
+expect(getByTestId('aria-invalid-value')).toBeInvalid();
+expect(getByTestId('aria-invalid-false')).not.toBeInvalid();
 
-expect(getByTestId('valid-form')).not.toBeInvalid()
-expect(getByTestId('invalid-form')).toBeInvalid()
+expect(getByTestId('valid-form')).not.toBeInvalid();
+expect(getByTestId('invalid-form')).toBeInvalid();
 ```
 
 <hr />
@@ -307,7 +300,7 @@ expect(getByTestId('invalid-form')).toBeInvalid()
 ### `toBeRequired`
 
 ```typescript
-toBeRequired()
+toBeRequired();
 ```
 
 This allows you to check if a form element is currently required.
@@ -331,16 +324,16 @@ attribute.
 ```
 
 ```javascript
-expect(getByTestId('required-input')).toBeRequired()
-expect(getByTestId('aria-required-input')).toBeRequired()
-expect(getByTestId('conflicted-input')).toBeRequired()
-expect(getByTestId('aria-not-required-input')).not.toBeRequired()
-expect(getByTestId('optional-input')).not.toBeRequired()
-expect(getByTestId('unsupported-type')).not.toBeRequired()
-expect(getByTestId('select')).toBeRequired()
-expect(getByTestId('textarea')).toBeRequired()
-expect(getByTestId('supported-role')).not.toBeRequired()
-expect(getByTestId('supported-role-aria')).toBeRequired()
+expect(getByTestId('required-input')).toBeRequired();
+expect(getByTestId('aria-required-input')).toBeRequired();
+expect(getByTestId('conflicted-input')).toBeRequired();
+expect(getByTestId('aria-not-required-input')).not.toBeRequired();
+expect(getByTestId('optional-input')).not.toBeRequired();
+expect(getByTestId('unsupported-type')).not.toBeRequired();
+expect(getByTestId('select')).toBeRequired();
+expect(getByTestId('textarea')).toBeRequired();
+expect(getByTestId('supported-role')).not.toBeRequired();
+expect(getByTestId('supported-role-aria')).toBeRequired();
 ```
 
 <hr />
@@ -348,7 +341,7 @@ expect(getByTestId('supported-role-aria')).toBeRequired()
 ### `toBeValid`
 
 ```typescript
-toBeValid()
+toBeValid();
 ```
 
 This allows you to check if the value of an element, is currently valid.
@@ -368,22 +361,22 @@ must also be `true` if it's a form element.
 <input data-testid="aria-invalid-false" aria-invalid="false" />
 
 <form data-testid="valid-form">
-  <input />
+	<input />
 </form>
 
 <form data-testid="invalid-form">
-  <input required />
+	<input required />
 </form>
 ```
 
 ```javascript
-expect(getByTestId('no-aria-invalid')).toBeValid()
-expect(getByTestId('aria-invalid')).not.toBeValid()
-expect(getByTestId('aria-invalid-value')).not.toBeValid()
-expect(getByTestId('aria-invalid-false')).toBeValid()
+expect(getByTestId('no-aria-invalid')).toBeValid();
+expect(getByTestId('aria-invalid')).not.toBeValid();
+expect(getByTestId('aria-invalid-value')).not.toBeValid();
+expect(getByTestId('aria-invalid-false')).toBeValid();
 
-expect(getByTestId('valid-form')).toBeValid()
-expect(getByTestId('invalid-form')).not.toBeValid()
+expect(getByTestId('valid-form')).toBeValid();
+expect(getByTestId('invalid-form')).not.toBeValid();
 ```
 
 <hr />
@@ -391,7 +384,7 @@ expect(getByTestId('invalid-form')).not.toBeValid()
 ### `toBeVisible`
 
 ```typescript
-toBeVisible()
+toBeVisible();
 ```
 
 This allows you to check if an element is currently visible to the user.
@@ -412,24 +405,22 @@ An element is visible if **all** the following conditions are met:
 
 ```html
 <div data-testid="zero-opacity" style="opacity: 0">Zero Opacity Example</div>
-<div data-testid="visibility-hidden" style="visibility: hidden">
-  Visibility Hidden Example
-</div>
+<div data-testid="visibility-hidden" style="visibility: hidden">Visibility Hidden Example</div>
 <div data-testid="display-none" style="display: none">Display None Example</div>
 <div style="opacity: 0">
-  <span data-testid="hidden-parent">Hidden Parent Example</span>
+	<span data-testid="hidden-parent">Hidden Parent Example</span>
 </div>
 <div data-testid="visible">Visible Example</div>
 <div data-testid="hidden-attribute" hidden>Hidden Attribute Example</div>
 ```
 
 ```javascript
-expect(getByText('Zero Opacity Example')).not.toBeVisible()
-expect(getByText('Visibility Hidden Example')).not.toBeVisible()
-expect(getByText('Display None Example')).not.toBeVisible()
-expect(getByText('Hidden Parent Example')).not.toBeVisible()
-expect(getByText('Visible Example')).toBeVisible()
-expect(getByText('Hidden Attribute Example')).not.toBeVisible()
+expect(getByText('Zero Opacity Example')).not.toBeVisible();
+expect(getByText('Visibility Hidden Example')).not.toBeVisible();
+expect(getByText('Display None Example')).not.toBeVisible();
+expect(getByText('Hidden Parent Example')).not.toBeVisible();
+expect(getByText('Visible Example')).toBeVisible();
+expect(getByText('Hidden Attribute Example')).not.toBeVisible();
 ```
 
 <hr />
@@ -450,13 +441,13 @@ descendant or not.
 ```
 
 ```javascript
-const ancestor = getByTestId('ancestor')
-const descendant = getByTestId('descendant')
-const nonExistantElement = getByTestId('does-not-exist')
+const ancestor = getByTestId('ancestor');
+const descendant = getByTestId('descendant');
+const nonExistantElement = getByTestId('does-not-exist');
 
-expect(ancestor).toContainElement(descendant)
-expect(descendant).not.toContainElement(ancestor)
-expect(ancestor).not.toContainElement(nonExistantElement)
+expect(ancestor).toContainElement(descendant);
+expect(descendant).not.toContainElement(ancestor);
+expect(ancestor).not.toContainElement(nonExistantElement);
 ```
 
 <hr />
@@ -505,25 +496,23 @@ does not have any classes.
 #### Examples
 
 ```html
-<button data-testid="delete-button" class="btn extra btn-danger">
-  Delete item
-</button>
+<button data-testid="delete-button" class="btn extra btn-danger">Delete item</button>
 <button data-testid="no-classes">No Classes</button>
 ```
 
 ```javascript
-const deleteButton = getByTestId('delete-button')
-const noClasses = getByTestId('no-classes')
+const deleteButton = getByTestId('delete-button');
+const noClasses = getByTestId('no-classes');
 
-expect(deleteButton).toHaveClassName('extra')
-expect(deleteButton).toHaveClassName('btn-danger btn')
-expect(deleteButton).toHaveClassName('btn-danger', 'btn')
-expect(deleteButton).not.toHaveClassName('btn-link')
+expect(deleteButton).toHaveClassName('extra');
+expect(deleteButton).toHaveClassName('btn-danger btn');
+expect(deleteButton).toHaveClassName('btn-danger', 'btn');
+expect(deleteButton).not.toHaveClassName('btn-link');
 
-expect(deleteButton).toHaveClassName('btn-danger extra btn', {exact: true}) // to check if the element has EXACTLY a set of classes
-expect(deleteButton).not.toHaveClassName('btn-danger extra', {exact: true}) // if it has more than expected it is going to fail
+expect(deleteButton).toHaveClassName('btn-danger extra btn', { exact: true }); // to check if the element has EXACTLY a set of classes
+expect(deleteButton).not.toHaveClassName('btn-danger extra', { exact: true }); // if it has more than expected it is going to fail
 
-expect(noClasses).not.toHaveClassName()
+expect(noClasses).not.toHaveClassName();
 ```
 
 <hr />
@@ -531,7 +520,7 @@ expect(noClasses).not.toHaveClassName()
 ### `toHaveFocus`
 
 ```typescript
-toHaveFocus()
+toHaveFocus();
 ```
 
 This allows you to assert whether an element has focus or not.
@@ -543,13 +532,13 @@ This allows you to assert whether an element has focus or not.
 ```
 
 ```javascript
-const input = getByTestId('element-to-focus')
+const input = getByTestId('element-to-focus');
 
-input.focus()
-expect(input).toHaveFocus()
+input.focus();
+expect(input).toHaveFocus();
 
-input.blur()
-expect(input).not.toHaveFocus()
+input.blur();
+expect(input).not.toHaveFocus();
 ```
 
 <hr />
@@ -611,29 +600,27 @@ control to using a group of radio buttons. Or to switch from a multi select
 control, to using a group of checkboxes. The resulting set of form values used
 by this matcher to compare against would be the same.
 
-[selected options]:
-  https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions
+[selected options]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/selectedOptions
 [form]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement
 [fieldset]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFieldSetElement
-[.elements]:
-  https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements
+[.elements]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/elements
 
 #### Examples
 
 ```html
 <form data-testid="login-form">
-  <input type="text" name="username" value="jane.doe" />
-  <input type="password" name="password" value="12345678" />
-  <input type="checkbox" name="rememberMe" checked />
-  <button type="submit">Sign in</button>
+	<input type="text" name="username" value="jane.doe" />
+	<input type="password" name="password" value="12345678" />
+	<input type="checkbox" name="rememberMe" checked />
+	<button type="submit">Sign in</button>
 </form>
 ```
 
 ```javascript
 expect(getByTestId('login-form')).toHaveFormValues({
-  username: 'jane.doe',
-  rememberMe: true,
-})
+	username: 'jane.doe',
+	rememberMe: true,
+});
 ```
 
 ### `toHaveStyle`
@@ -649,35 +636,30 @@ expected properties applied, not just some of them.
 #### Examples
 
 ```html
-<button
-  data-testid="delete-button"
-  style="display: none; background-color: red"
->
-  Delete item
-</button>
+<button data-testid="delete-button" style="display: none; background-color: red">Delete item</button>
 ```
 
 ```javascript
-const button = getByTestId('delete-button')
+const button = getByTestId('delete-button');
 
-expect(button).toHaveStyle('display: none')
-expect(button).toHaveStyle({display: 'none'})
+expect(button).toHaveStyle('display: none');
+expect(button).toHaveStyle({ display: 'none' });
 expect(button).toHaveStyle(`
   background-color: red;
   display: none;
-`)
+`);
 expect(button).toHaveStyle({
-  backgroundColor: 'red',
-  display: 'none',
-})
+	backgroundColor: 'red',
+	display: 'none',
+});
 expect(button).not.toHaveStyle(`
   background-color: blue;
   display: none;
-`)
+`);
 expect(button).not.toHaveStyle({
-  backgroundColor: 'blue',
-  display: 'none',
-})
+	backgroundColor: 'blue',
+	display: 'none',
+});
 ```
 
 This also works with rules that are applied to the element via a class name for
@@ -709,12 +691,12 @@ If you want to match the whole content, you can use a `RegExp` to do it.
 ```
 
 ```javascript
-const element = getByTestId('text-content')
+const element = getByTestId('text-content');
 
-expect(element).toHaveTextContent('Content')
-expect(element).toHaveTextContent(/^Text Content$/) // to match the whole content
-expect(element).toHaveTextContent(/content$/i) // to use case-insensitive match
-expect(element).not.toHaveTextContent('content')
+expect(element).toHaveTextContent('Content');
+expect(element).toHaveTextContent(/^Text Content$/); // to match the whole content
+expect(element).toHaveTextContent(/content$/i); // to use case-insensitive match
+expect(element).not.toHaveTextContent('content');
 ```
 
 <hr />
@@ -741,24 +723,24 @@ For all other form elements, the value is matched using the same algorithm as in
 <input type="number" value="5" data-testid="input-number" />
 <input type="text" data-testid="input-empty" />
 <select data-testid="multiple" multiple data-testid="select-number">
-  <option value="first">First Value</option>
-  <option value="second" selected>Second Value</option>
-  <option value="third" selected>Third Value</option>
+	<option value="first">First Value</option>
+	<option value="second" selected>Second Value</option>
+	<option value="third" selected>Third Value</option>
 </select>
 ```
 
 ##### Using DOM Testing Library
 
 ```javascript
-const textInput = screen.getByTestId('input-text')
-const numberInput = screen.getByTestId('input-number')
-const emptyInput = screen.getByTestId('input-empty')
-const selectInput = screen.getByTestId('select-number')
+const textInput = screen.getByTestId('input-text');
+const numberInput = screen.getByTestId('input-number');
+const emptyInput = screen.getByTestId('input-empty');
+const selectInput = screen.getByTestId('select-number');
 
-expect(textInput).toHaveValue('text')
-expect(numberInput).toHaveValue(5)
-expect(emptyInput).not.toHaveValue()
-expect(selectInput).not.toHaveValue(['second', 'third'])
+expect(textInput).toHaveValue('text');
+expect(numberInput).toHaveValue(5);
+expect(emptyInput).not.toHaveValue();
+expect(selectInput).not.toHaveValue(['second', 'third']);
 ```
 
 <hr />
@@ -787,36 +769,36 @@ matched only using [`toBeChecked`](#tobechecked) or
 
 <label for="single-select-example">Fruit</label>
 <select id="single-select-example">
-  <option value="">Select a fruit...</option>
-  <option value="banana">Banana</option>
-  <option value="ananas">Ananas</option>
-  <option value="avocado">Avocado</option>
+	<option value="">Select a fruit...</option>
+	<option value="banana">Banana</option>
+	<option value="ananas">Ananas</option>
+	<option value="avocado">Avocado</option>
 </select>
 
 <label for="mutiple-select-example">Fruits</label>
 <select id="multiple-select-example" multiple>
-  <option value="">Select a fruit...</option>
-  <option value="banana" selected>Banana</option>
-  <option value="ananas">Ananas</option>
-  <option value="avocado" selected>Avocado</option>
+	<option value="">Select a fruit...</option>
+	<option value="banana" selected>Banana</option>
+	<option value="ananas">Ananas</option>
+	<option value="avocado" selected>Avocado</option>
 </select>
 ```
 
 ##### Using DOM Testing Library
 
 ```javascript
-const input = screen.getByLabelText('First name')
-const textarea = screen.getByLabelText('Description')
-const selectSingle = screen.getByLabelText('Fruit')
-const selectMultiple = screen.getByLabelText('Fruits')
+const input = screen.getByLabelText('First name');
+const textarea = screen.getByLabelText('Description');
+const selectSingle = screen.getByLabelText('Fruit');
+const selectMultiple = screen.getByLabelText('Fruits');
 
-expect(input).toHaveDisplayValue('Luca')
-expect(input).toHaveDisplayValue(/Luc/)
-expect(textarea).toHaveDisplayValue('An example description here.')
-expect(textarea).toHaveDisplayValue(/example/)
-expect(selectSingle).toHaveDisplayValue('Select a fruit...')
-expect(selectSingle).toHaveDisplayValue(/Select/)
-expect(selectMultiple).toHaveDisplayValue([/Avocado/, 'Banana'])
+expect(input).toHaveDisplayValue('Luca');
+expect(input).toHaveDisplayValue(/Luc/);
+expect(textarea).toHaveDisplayValue('An example description here.');
+expect(textarea).toHaveDisplayValue(/example/);
+expect(selectSingle).toHaveDisplayValue('Select a fruit...');
+expect(selectSingle).toHaveDisplayValue(/Select/);
+expect(selectMultiple).toHaveDisplayValue([/Avocado/, 'Banana']);
 ```
 
 <hr />
@@ -824,7 +806,7 @@ expect(selectMultiple).toHaveDisplayValue([/Avocado/, 'Banana'])
 ### `toBeChecked`
 
 ```typescript
-toBeChecked()
+toBeChecked();
 ```
 
 This allows you to check whether the given element is checked. It accepts an
@@ -838,11 +820,7 @@ This allows you to check whether the given element is checked. It accepts an
 <input type="checkbox" checked data-testid="input-checkbox-checked" />
 <input type="checkbox" data-testid="input-checkbox-unchecked" />
 <div role="checkbox" aria-checked="true" data-testid="aria-checkbox-checked" />
-<div
-  role="checkbox"
-  aria-checked="false"
-  data-testid="aria-checkbox-unchecked"
-/>
+<div role="checkbox" aria-checked="false" data-testid="aria-checkbox-unchecked" />
 
 <input type="radio" checked value="foo" data-testid="input-radio-checked" />
 <input type="radio" value="foo" data-testid="input-radio-unchecked" />
@@ -853,28 +831,28 @@ This allows you to check whether the given element is checked. It accepts an
 ```
 
 ```javascript
-const inputCheckboxChecked = getByTestId('input-checkbox-checked')
-const inputCheckboxUnchecked = getByTestId('input-checkbox-unchecked')
-const ariaCheckboxChecked = getByTestId('aria-checkbox-checked')
-const ariaCheckboxUnchecked = getByTestId('aria-checkbox-unchecked')
-expect(inputCheckboxChecked).toBeChecked()
-expect(inputCheckboxUnchecked).not.toBeChecked()
-expect(ariaCheckboxChecked).toBeChecked()
-expect(ariaCheckboxUnchecked).not.toBeChecked()
+const inputCheckboxChecked = getByTestId('input-checkbox-checked');
+const inputCheckboxUnchecked = getByTestId('input-checkbox-unchecked');
+const ariaCheckboxChecked = getByTestId('aria-checkbox-checked');
+const ariaCheckboxUnchecked = getByTestId('aria-checkbox-unchecked');
+expect(inputCheckboxChecked).toBeChecked();
+expect(inputCheckboxUnchecked).not.toBeChecked();
+expect(ariaCheckboxChecked).toBeChecked();
+expect(ariaCheckboxUnchecked).not.toBeChecked();
 
-const inputRadioChecked = getByTestId('input-radio-checked')
-const inputRadioUnchecked = getByTestId('input-radio-unchecked')
-const ariaRadioChecked = getByTestId('aria-radio-checked')
-const ariaRadioUnchecked = getByTestId('aria-radio-unchecked')
-expect(inputRadioChecked).toBeChecked()
-expect(inputRadioUnchecked).not.toBeChecked()
-expect(ariaRadioChecked).toBeChecked()
-expect(ariaRadioUnchecked).not.toBeChecked()
+const inputRadioChecked = getByTestId('input-radio-checked');
+const inputRadioUnchecked = getByTestId('input-radio-unchecked');
+const ariaRadioChecked = getByTestId('aria-radio-checked');
+const ariaRadioUnchecked = getByTestId('aria-radio-unchecked');
+expect(inputRadioChecked).toBeChecked();
+expect(inputRadioUnchecked).not.toBeChecked();
+expect(ariaRadioChecked).toBeChecked();
+expect(ariaRadioUnchecked).not.toBeChecked();
 
-const ariaSwitchChecked = getByTestId('aria-switch-checked')
-const ariaSwitchUnchecked = getByTestId('aria-switch-unchecked')
-expect(ariaSwitchChecked).toBeChecked()
-expect(ariaSwitchUnchecked).not.toBeChecked()
+const ariaSwitchChecked = getByTestId('aria-switch-checked');
+const ariaSwitchUnchecked = getByTestId('aria-switch-unchecked');
+expect(ariaSwitchChecked).toBeChecked();
+expect(ariaSwitchUnchecked).not.toBeChecked();
 ```
 
 <hr />
@@ -882,7 +860,7 @@ expect(ariaSwitchUnchecked).not.toBeChecked()
 ### `toBePartiallyChecked`
 
 ```typescript
-toBePartiallyChecked()
+toBePartiallyChecked();
 ```
 
 This allows you to check whether the given element is partially checked. It
@@ -897,30 +875,26 @@ with a `aria-checked="mixed"`, or `input` of type `checkbox` with
 <input type="checkbox" checked data-testid="input-checkbox-checked" />
 <input type="checkbox" data-testid="input-checkbox-unchecked" />
 <div role="checkbox" aria-checked="true" data-testid="aria-checkbox-checked" />
-<div
-  role="checkbox"
-  aria-checked="false"
-  data-testid="aria-checkbox-unchecked"
-/>
+<div role="checkbox" aria-checked="false" data-testid="aria-checkbox-unchecked" />
 <input type="checkbox" data-testid="input-checkbox-indeterminate" />
 ```
 
 ```javascript
-const ariaCheckboxMixed = getByTestId('aria-checkbox-mixed')
-const inputCheckboxChecked = getByTestId('input-checkbox-checked')
-const inputCheckboxUnchecked = getByTestId('input-checkbox-unchecked')
-const ariaCheckboxChecked = getByTestId('aria-checkbox-checked')
-const ariaCheckboxUnchecked = getByTestId('aria-checkbox-unchecked')
-const inputCheckboxIndeterminate = getByTestId('input-checkbox-indeterminate')
+const ariaCheckboxMixed = getByTestId('aria-checkbox-mixed');
+const inputCheckboxChecked = getByTestId('input-checkbox-checked');
+const inputCheckboxUnchecked = getByTestId('input-checkbox-unchecked');
+const ariaCheckboxChecked = getByTestId('aria-checkbox-checked');
+const ariaCheckboxUnchecked = getByTestId('aria-checkbox-unchecked');
+const inputCheckboxIndeterminate = getByTestId('input-checkbox-indeterminate');
 
-expect(ariaCheckboxMixed).toBePartiallyChecked()
-expect(inputCheckboxChecked).not.toBePartiallyChecked()
-expect(inputCheckboxUnchecked).not.toBePartiallyChecked()
-expect(ariaCheckboxChecked).not.toBePartiallyChecked()
-expect(ariaCheckboxUnchecked).not.toBePartiallyChecked()
+expect(ariaCheckboxMixed).toBePartiallyChecked();
+expect(inputCheckboxChecked).not.toBePartiallyChecked();
+expect(inputCheckboxUnchecked).not.toBePartiallyChecked();
+expect(ariaCheckboxChecked).not.toBePartiallyChecked();
+expect(ariaCheckboxUnchecked).not.toBePartiallyChecked();
 
-inputCheckboxIndeterminate.indeterminate = true
-expect(inputCheckboxIndeterminate).toBePartiallyChecked()
+inputCheckboxIndeterminate.indeterminate = true;
+expect(inputCheckboxIndeterminate).toBePartiallyChecked();
 ```
 
 <hr />
@@ -952,27 +926,23 @@ To perform a partial match, you can pass a `RegExp`.
 #### Examples
 
 ```html
-<button aria-label="Close" aria-describedby="description-close">
-  X
-</button>
-<div id="description-close">
-  Closing will discard any changes
-</div>
+<button aria-label="Close" aria-describedby="description-close">X</button>
+<div id="description-close">Closing will discard any changes</div>
 
 <button>Delete</button>
 ```
 
 ```javascript
-const closeButton = getByRole('button', {name: 'Close'})
+const closeButton = getByRole('button', { name: 'Close' });
 
-expect(closeButton).toHaveDescription('Closing will discard any changes')
-expect(closeButton).toHaveDescription(/will discard/) // to partially match
-expect(closeButton).toHaveDescription(/^closing/i) // to use case-insensitive match
-expect(closeButton).not.toHaveDescription('Other description')
+expect(closeButton).toHaveDescription('Closing will discard any changes');
+expect(closeButton).toHaveDescription(/will discard/); // to partially match
+expect(closeButton).toHaveDescription(/^closing/i); // to use case-insensitive match
+expect(closeButton).not.toHaveDescription('Other description');
 
-const deleteButton = getByRole('button', {name: 'Delete'})
-expect(deleteButton).not.toHaveDescription()
-expect(deleteButton).toHaveDescription('') // Missing or empty description always becomes a blank string
+const deleteButton = getByRole('button', { name: 'Delete' });
+expect(deleteButton).not.toHaveDescription();
+expect(deleteButton).toHaveDescription(''); // Missing or empty description always becomes a blank string
 ```
 
 ## Inspiration
@@ -994,6 +964,7 @@ For extending Jasmine's matchers outside the realm of DOM testing, [Jasmine-Matc
 ## Contributors
 
 Thanks goes to these people ([emoji key][emojis])
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -1007,6 +978,7 @@ Thanks goes to these people ([emoji key][emojis])
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors][all-contributors] specification.
@@ -1053,4 +1025,4 @@ MIT
 [all-contributors-badge]: https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square
 [guiding-principle]: https://testing-library.com/docs/guiding-principles
 [discord-badge]: https://img.shields.io/discord/723559267868737556.svg?color=7389D8&labelColor=6A7EC2&logo=discord&logoColor=ffffff&style=flat-square
-[discord]: https://discord.gg/c6JN9fM
+[discord]: https://discord.gg/testing-library
