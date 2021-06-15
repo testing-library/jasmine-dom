@@ -65,10 +65,8 @@ describe('.toHaveClassName', () => {
 				deleteButton,
 				'btn btn-danger'
 			);
-			const {
-				message: negativeDeleteBtnAndBtnDangerMessage,
-				pass: negativeDeleteBtnAndBtnDangerPass,
-			} = negativeCompare(deleteButton, 'btn', 'btn-danger');
+			const { message: negativeDeleteBtnAndBtnDangerMessage, pass: negativeDeleteBtnAndBtnDangerPass } =
+				negativeCompare(deleteButton, 'btn', 'btn-danger');
 			const { message: positiveDeleteBtnLinkMessage, pass: positiveDeleteBtnLinkPass } = compare(
 				deleteButton,
 				'btn-link'
