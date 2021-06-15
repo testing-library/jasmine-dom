@@ -1,6 +1,6 @@
 <div align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <h1>jasmine-dom</h1>
 
@@ -974,6 +974,7 @@ Thanks goes to these people ([emoji key][emojis])
     <td align="center"><a href="https://github.com/brrianalexis"><img src="https://avatars2.githubusercontent.com/u/51463930?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Alexis</b></sub></a><br /><a href="#ideas-brrianalexis" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Documentation">📖</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Tests">⚠️</a></td>
     <td align="center"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
     <td align="center"><a href="https://michaeldeboey.be"><img src="https://avatars.githubusercontent.com/u/6643991?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michaël De Boey</b></sub></a><br /><a href="#infra-MichaelDeBoey" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://nickmccurdy.com/"><img src="https://avatars.githubusercontent.com/u/927220?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nick McCurdy</b></sub></a><br /><a href="#infra-nickmccurdy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
   </tr>
 </table>
 
