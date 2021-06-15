@@ -1,7 +1,4 @@
 <div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <h1>jasmine-dom</h1>
 
 <a href="https://www.joypixels.com/profiles/emoji/sloth/_/5.0">
@@ -27,9 +24,7 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
 [![All Contributors][all-contributors-badge]](#contributors-)
-
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![PRs Welcome][prs-badge]][prs]
@@ -1024,7 +1019,7 @@ MIT
 [twitter-badge]: https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Ftesting-library%2Fjasmine-dom
 [emojis]: https://allcontributors.org/docs/en/emoji-key
 [all-contributors]: https://github.com/all-contributors/all-contributors
-[all-contributors-badge]: https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square
+[all-contributors-badge]: https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square
 [guiding-principle]: https://testing-library.com/docs/guiding-principles
 [discord-badge]: https://img.shields.io/discord/723559267868737556.svg?color=7389D8&labelColor=6A7EC2&logo=discord&logoColor=ffffff&style=flat-square
 [discord]: https://discord.gg/testing-library
