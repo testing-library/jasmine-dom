@@ -6,7 +6,7 @@
     height="80"
     width="80"
     alt="sloth"
-    src="https://github.com/testing-library/jasmine-dom/blob/master/other/sloth.png?raw=true"  
+    src="https://github.com/testing-library/jasmine-dom/blob/main/other/sloth.png?raw=true"  
   >
 </a>
 
@@ -24,7 +24,9 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors][all-contributors-badge]](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![PRs Welcome][prs-badge]][prs]
@@ -997,7 +999,7 @@ MIT
 
 [build-badge]: https://img.shields.io/github/workflow/status/testing-library/jasmine-dom/validate?logo=github&style=flat-square
 [build]: https://github.com/testing-library/jasmine-dom/actions?query=workflow%3Avalidate
-[coverage-badge]: https://codecov.io/gh/testing-library/jasmine-dom/branch/master/graph/badge.svg
+[coverage-badge]: https://codecov.io/gh/testing-library/jasmine-dom/branch/main/graph/badge.svg
 [coverage]: https://codecov.io/gh/testing-library/jasmine-dom
 [version-badge]: https://img.shields.io/npm/v/@testing-library/jasmine-dom?style=flat-square
 [semantic-release-badge]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
@@ -1006,11 +1008,11 @@ MIT
 [downloads-badge]: https://img.shields.io/npm/dm/@testing-library/jasmine-dom?style=flat-square
 [npmtrends]: http://www.npmtrends.com/@testing-library/jasmine-dom
 [license-badge]: https://img.shields.io/npm/l/@testing-library/jasmine-dom?style=flat-square
-[license]: https://github.com/testing-library/jasmine-dom/blob/master/LICENSE
+[license]: https://github.com/testing-library/jasmine-dom/blob/main/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/testing-library/jasmine-dom/blob/master/other/CODE_OF_CONDUCT.md
+[coc]: https://github.com/testing-library/jasmine-dom/blob/main/other/CODE_OF_CONDUCT.md
 [github-watch-badge]: https://img.shields.io/github/watchers/testing-library/jasmine-dom?style=social
 [github-watch]: https://github.com/testing-library/jasmine-dom/watchers
 [github-star-badge]: https://img.shields.io/github/stars/testing-library/jasmine-dom?style=social

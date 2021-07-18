@@ -48,7 +48,7 @@ to release. See the next section on Releases for more about that.
 
 ## Release
 
-Our releases are automatic. They happen whenever code lands into `master`. A
+Our releases are automatic. They happen whenever code lands into `main`. A
 GitHub Action gets kicked off and if it's successful, a tool called
 [`semantic-release`](https://github.com/semantic-release/semantic-release) is
 used to automatically publish a new release to npm as well as a changelog to
@@ -66,5 +66,4 @@ necessary by the git commit messages. With this in mind, **please brush up on
 
 Thank you so much for helping to maintain this project!
 
-[commit]:
-  https://github.com/conventional-changelog-archived-repos/conventional-changelog-angular/blob/ed32559941719a130bb0327f886d6a32a8cbc2ba/convention.md
+[commit]: https://github.com/conventional-changelog-archived-repos/conventional-changelog-angular/blob/ed32559941719a130bb0327f886d6a32a8cbc2ba/convention.md
