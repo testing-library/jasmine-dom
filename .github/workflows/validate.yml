@@ -2,11 +2,11 @@ name: validate
 on:
   push:
     branches:
-      - "+([0-9])?(.{+([0-9]),x}).x"
-      - "master"
-      - "beta"
-      - "alpha"
-      - "!all-contributors/**"
+      - '+([0-9])?(.{+([0-9]),x}).x'
+      - 'main'
+      - 'beta'
+      - 'alpha'
+      - '!all-contributors/**'
   pull_request: {}
 jobs:
   main:
@@ -39,7 +39,7 @@ jobs:
     needs: main
     runs-on: ubuntu-latest
     if: ${{ github.repository == 'testing-library/jasmine-dom' &&
-      contains('refs/heads/master,refs/heads/beta,refs/heads/next,refs/heads/alpha',
+      contains('refs/heads/main,refs/heads/beta,refs/heads/next,refs/heads/alpha',
       github.ref) && github.event_name == 'push' }}
     steps:
       - name: ⬇️ Checkout repo
@@ -65,7 +65,7 @@ jobs:
           branches: |
             [
               '+([0-9])?(.{+([0-9]),x}).x',
-              'master',
+              'main',
               {name: 'beta', prerelease: true},
               {name: 'alpha', prerelease: true}
             ]
