@@ -41,7 +41,7 @@
 		"@babel/register": "^7.12.10",
 		"@types/jasmine": "^3.6.2",
 		"babel-plugin-istanbul": "^6.0.0",
-		"eslint": "^7.15.0",
+		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.0.0",
 		"eslint-plugin-prettier": "^4.0.0",
 		"jasmine": "^3.6.3",
