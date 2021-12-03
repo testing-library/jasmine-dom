@@ -47,7 +47,7 @@
 		"jasmine": "^3.6.3",
 		"jasmine-reporters": "^2.3.2",
 		"jasmine-spec-reporter": "^7.0.0",
-		"jsdom": "^18.0.0",
+		"jsdom": "^19.0.0",
 		"kcd-scripts": "^11.1.0",
 		"nyc": "^15.1.0",
 		"onchange": "^7.1.0",
