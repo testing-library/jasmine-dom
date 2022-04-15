@@ -39,7 +39,7 @@
 		"@babel/core": "^7.12.10",
 		"@babel/preset-env": "^7.12.10",
 		"@babel/register": "^7.12.10",
-		"@types/jasmine": "^3.6.2",
+		"@types/jasmine": "^4.0.3",
 		"babel-plugin-istanbul": "^6.0.0",
 		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.0.0",
