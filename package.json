@@ -60,5 +60,8 @@
 	"bugs": {
 		"url": "https://github.com/testing-library/jasmine-dom/issues"
 	},
-	"homepage": "https://github.com/testing-library/jasmine-dom#readme"
+	"homepage": "https://github.com/testing-library/jasmine-dom#readme",
+	"volta": {
+		"node": "16.18.1"
+	}
 }
