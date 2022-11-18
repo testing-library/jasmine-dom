@@ -29,7 +29,7 @@
 		"@babel/runtime": "^7.12.5",
 		"@types/testing-library__jasmine-dom": "^1.0.3",
 		"aria-query": "^5.0.0",
-		"chalk": "^4.1.0",
+		"chalk": "^5.1.2",
 		"css": "^3.0.0",
 		"css.escape": "^1.5.1",
 		"lodash": "^4.17.20"
