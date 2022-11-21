@@ -6,7 +6,7 @@
     height="80"
     width="80"
     alt="sloth"
-    src="https://github.com/testing-library/jasmine-dom/blob/main/other/sloth.png?raw=true"  
+    src="https://github.com/testing-library/jasmine-dom/blob/main/other/sloth.png?raw=true"
   >
 </a>
 
@@ -61,6 +61,7 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
   - [`toBeRequired`](#toberequired)
   - [`toBeValid`](#tobevalid)
   - [`toBeVisible`](#tobevisible)
+  - [`toContainHTML`](#tocontainhtml)
   - [`toContainElement`](#tocontainelement)
   - [`toHaveAttribute`](#tohaveattribute)
   - [`toHaveClassName`](#tohaveclassname)
@@ -154,7 +155,6 @@ This library is meant to be a Jasmine version of `@testing-library/jest-dom` lib
 
 - `toBeEmpty()` is not included, in favor of `toBeEmptyDOMElement()`
 - `toBeInTheDOM()` is not included, since it's deprecated
-- `toContainHTML()` is not included
 - `toHaveClass()` is renamed as `toHaveClassName()` to prevent name collision with Jasmine's `toHaveClass()`
 
 ### `toBeDisabled`
@@ -419,6 +419,46 @@ expect(getByText('Hidden Parent Example')).not.toBeVisible();
 expect(getByText('Visible Example')).toBeVisible();
 expect(getByText('Hidden Attribute Example')).not.toBeVisible();
 ```
+
+<hr />
+
+### `toContainHTML`
+
+```typescript
+toContainHTML(htmlText: string)
+```
+
+Assert whether a string representing a HTML element is contained in another
+element. The string should contain valid html, and not any incomplete html.
+
+#### Examples
+
+```html
+<span data-testid="parent"><span data-testid="child"></span></span>
+```
+
+```javascript
+// These are valid uses
+expect(getByTestId('parent')).toContainHTML('<span data-testid="child"></span>');
+expect(getByTestId('parent')).toContainHTML('<span data-testid="child" />');
+expect(getByTestId('parent')).not.toContainHTML('<br />');
+
+// These won't work
+expect(getByTestId('parent')).toContainHTML('data-testid="child"');
+expect(getByTestId('parent')).toContainHTML('data-testid');
+expect(getByTestId('parent')).toContainHTML('</span>');
+```
+
+> Chances are you probably do not need to use this matcher. We encourage testing
+> from the perspective of how the user perceives the app in a browser. That's
+> why testing against a specific DOM structure is not advised.
+>
+> It could be useful in situations where the code being tested renders html that
+> was obtained from an external source, and you want to validate that that html
+> code was used as intended.
+>
+> It should not be used to check DOM structure that you control. Please use
+> [`toContainElement`](#tocontainelement) instead.
 
 <hr />
 
