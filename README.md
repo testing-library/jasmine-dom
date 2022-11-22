@@ -63,6 +63,7 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
   - [`toBeVisible`](#tobevisible)
   - [`toContainHTML`](#tocontainhtml)
   - [`toContainElement`](#tocontainelement)
+  - [`toHaveAccessibleDescription`](#tohaveaccessibledescription)
   - [`toHaveAttribute`](#tohaveattribute)
   - [`toHaveClassName`](#tohaveclassname)
   - [`toHaveFocus`](#tohavefocus)
@@ -485,6 +486,41 @@ const nonExistantElement = getByTestId('does-not-exist');
 expect(ancestor).toContainElement(descendant);
 expect(descendant).not.toContainElement(ancestor);
 expect(ancestor).not.toContainElement(nonExistantElement);
+```
+
+<hr />
+
+### `toHaveAccessibleDescription`
+
+```typescript
+toHaveAccessibleDescription(expectedAccessibleDescription?: string | RegExp)
+```
+
+This allows you to assert that an element has the expected
+[accessible description](https://w3c.github.io/accname/).
+
+You can pass the exact string of the expected accessible description, or you can
+make a partial match passing a regular expression, or by using
+[jasmine.stringContaining](https://jasmine.github.io/api/edge/jasmine#.stringContaining)/[jasmine.stringMatching](https://jasmine.github.io/api/edge/jasmine#.stringMatching).
+
+#### Examples
+
+```html
+<a data-testid="link" href="/" aria-label="Home page" title="A link to start over">Start</a>
+<a data-testid="extra-link" href="/about" aria-label="About page">About</a>
+<img src="avatar.jpg" data-testid="avatar" alt="User profile pic" />
+<img src="logo.jpg" data-testid="logo" alt="Company logo" aria-describedby="t1" />
+<span id="t1" role="presentation">The logo of Our Company</span>
+```
+
+```js
+expect(getByTestId('link')).toHaveAccessibleDescription();
+expect(getByTestId('link')).toHaveAccessibleDescription('A link to start over');
+expect(getByTestId('link')).not.toHaveAccessibleDescription('Home page');
+expect(getByTestId('extra-link')).not.toHaveAccessibleDescription();
+expect(getByTestId('avatar')).not.toHaveAccessibleDescription();
+expect(getByTestId('logo')).not.toHaveAccessibleDescription('Company logo');
+expect(getByTestId('logo')).toHaveAccessibleDescription('The logo of Our Company');
 ```
 
 <hr />
