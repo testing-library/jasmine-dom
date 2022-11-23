@@ -11,6 +11,7 @@ import { toHaveAccessibleName } from './toHaveAccessibleName';
 import { toHaveDescription } from './toHaveDescription';
 import { toHaveValue } from './toHaveValue';
 import { toHaveFormValues } from './toHaveFormValues';
+import { toHaveErrorMessage } from './toHaveErrorMessage';
 import { toContainElement } from './toContainElement';
 import { toBeRequired } from './toBeRequired';
 import { toBeInvalid, toBeValid } from './toBeInvalid';
@@ -35,6 +36,7 @@ const JasmineDOM = {
 	toHaveDescription,
 	toHaveValue,
 	toHaveFormValues,
+	toHaveErrorMessage,
 	toContainElement,
 	toBeRequired,
 	toBeInvalid,
