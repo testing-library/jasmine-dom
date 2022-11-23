@@ -7,6 +7,7 @@ import { toContainHTML } from './toContainHTML';
 import { toHaveFocus } from './toHaveFocus';
 import { toBeDisabled, toBeEnabled } from './toBeDisabled';
 import { toHaveAccessibleDescription } from './toHaveAccessibleDescription';
+import { toHaveAccessibleName } from './toHaveAccessibleName';
 import { toHaveDescription } from './toHaveDescription';
 import { toHaveValue } from './toHaveValue';
 import { toHaveFormValues } from './toHaveFormValues';
@@ -27,6 +28,7 @@ const JasmineDOM = {
 	toBeEmptyDOMElement,
 	toContainHTML,
 	toHaveAccessibleDescription,
+	toHaveAccessibleName,
 	toHaveFocus,
 	toBeDisabled,
 	toBeEnabled,

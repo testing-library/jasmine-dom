@@ -64,6 +64,7 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
   - [`toContainHTML`](#tocontainhtml)
   - [`toContainElement`](#tocontainelement)
   - [`toHaveAccessibleDescription`](#tohaveaccessibledescription)
+  - [`toHaveAccessibleName`](#tohaveaccessiblename)
   - [`toHaveAttribute`](#tohaveattribute)
   - [`toHaveClassName`](#tohaveclassname)
   - [`toHaveFocus`](#tohavefocus)
@@ -521,6 +522,46 @@ expect(getByTestId('extra-link')).not.toHaveAccessibleDescription();
 expect(getByTestId('avatar')).not.toHaveAccessibleDescription();
 expect(getByTestId('logo')).not.toHaveAccessibleDescription('Company logo');
 expect(getByTestId('logo')).toHaveAccessibleDescription('The logo of Our Company');
+```
+
+<hr />
+
+### `toHaveAccessibleName`
+
+```typescript
+toHaveAccessibleName(expectedAccessibleName?: string | RegExp)
+```
+
+This allows you to assert that an element has the expected
+[accessible name](https://w3c.github.io/accname/). It is useful, for instance,
+to assert that form elements and buttons are properly labelled.
+
+You can pass the exact string of the expected accessible name, or you can make a
+partial match passing a regular expression, or by using
+[jasmine.stringContaining](https://jasmine.github.io/api/edge/jasmine#.stringContaining)/[jasmine.stringMatching](https://jasmine.github.io/api/edge/jasmine#.stringMatching).
+
+#### Examples
+
+```html
+<img data-testid="img-alt" src="" alt="Test alt" />
+<img data-testid="img-empty-alt" src="" alt="" />
+<svg data-testid="svg-title"><title>Test title</title></svg>
+<button data-testid="button-img-alt"><img src="" alt="Test" /></button>
+<p><img data-testid="img-paragraph" src="" alt="" /> Test content</p>
+<button data-testid="svg-button"><svg><title>Test</title></svg></p>
+<div><svg data-testid="svg-without-title"></svg></div>
+<input data-testid="input-title" title="test" />
+```
+
+```javascript
+expect(getByTestId('img-alt')).toHaveAccessibleName('Test alt');
+expect(getByTestId('img-empty-alt')).not.toHaveAccessibleName();
+expect(getByTestId('svg-title')).toHaveAccessibleName('Test title');
+expect(getByTestId('button-img-alt')).toHaveAccessibleName();
+expect(getByTestId('img-paragraph')).not.toHaveAccessibleName();
+expect(getByTestId('svg-button')).toHaveAccessibleName();
+expect(getByTestId('svg-without-title')).not.toHaveAccessibleName();
+expect(getByTestId('input-title')).toHaveAccessibleName();
 ```
 
 <hr />
