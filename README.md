@@ -6,7 +6,7 @@
     height="80"
     width="80"
     alt="sloth"
-    src="https://github.com/testing-library/jasmine-dom/blob/main/other/sloth.png?raw=true"  
+    src="https://github.com/testing-library/jasmine-dom/blob/main/other/sloth.png?raw=true"
   >
 </a>
 
@@ -61,7 +61,10 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
   - [`toBeRequired`](#toberequired)
   - [`toBeValid`](#tobevalid)
   - [`toBeVisible`](#tobevisible)
+  - [`toContainHTML`](#tocontainhtml)
   - [`toContainElement`](#tocontainelement)
+  - [`toHaveAccessibleDescription`](#tohaveaccessibledescription)
+  - [`toHaveAccessibleName`](#tohaveaccessiblename)
   - [`toHaveAttribute`](#tohaveattribute)
   - [`toHaveClassName`](#tohaveclassname)
   - [`toHaveFocus`](#tohavefocus)
@@ -72,6 +75,7 @@ The `jasmine-dom` library provides a set of custom Jasmine matchers that you can
   - [`toHaveDisplayValue`](#tohavedisplayvalue)
   - [`toBeChecked`](#tobechecked)
   - [`toBePartiallyChecked`](#tobepartiallychecked)
+  - [`toHaveErrorMessage`](#tohaveerrormessage)
   - [`toHaveDescription`](#tohavedescription)
 - [Inspiration](#inspiration)
 - [Other Solutions](#other-solutions)
@@ -154,7 +158,6 @@ This library is meant to be a Jasmine version of `@testing-library/jest-dom` lib
 
 - `toBeEmpty()` is not included, in favor of `toBeEmptyDOMElement()`
 - `toBeInTheDOM()` is not included, since it's deprecated
-- `toContainHTML()` is not included
 - `toHaveClass()` is renamed as `toHaveClassName()` to prevent name collision with Jasmine's `toHaveClass()`
 
 ### `toBeDisabled`
@@ -422,6 +425,46 @@ expect(getByText('Hidden Attribute Example')).not.toBeVisible();
 
 <hr />
 
+### `toContainHTML`
+
+```typescript
+toContainHTML(htmlText: string)
+```
+
+Assert whether a string representing a HTML element is contained in another
+element. The string should contain valid html, and not any incomplete html.
+
+#### Examples
+
+```html
+<span data-testid="parent"><span data-testid="child"></span></span>
+```
+
+```javascript
+// These are valid uses
+expect(getByTestId('parent')).toContainHTML('<span data-testid="child"></span>');
+expect(getByTestId('parent')).toContainHTML('<span data-testid="child" />');
+expect(getByTestId('parent')).not.toContainHTML('<br />');
+
+// These won't work
+expect(getByTestId('parent')).toContainHTML('data-testid="child"');
+expect(getByTestId('parent')).toContainHTML('data-testid');
+expect(getByTestId('parent')).toContainHTML('</span>');
+```
+
+> Chances are you probably do not need to use this matcher. We encourage testing
+> from the perspective of how the user perceives the app in a browser. That's
+> why testing against a specific DOM structure is not advised.
+>
+> It could be useful in situations where the code being tested renders html that
+> was obtained from an external source, and you want to validate that that html
+> code was used as intended.
+>
+> It should not be used to check DOM structure that you control. Please use
+> [`toContainElement`](#tocontainelement) instead.
+
+<hr />
+
 ### `toContainElement`
 
 ```typescript
@@ -445,6 +488,81 @@ const nonExistantElement = getByTestId('does-not-exist');
 expect(ancestor).toContainElement(descendant);
 expect(descendant).not.toContainElement(ancestor);
 expect(ancestor).not.toContainElement(nonExistantElement);
+```
+
+<hr />
+
+### `toHaveAccessibleDescription`
+
+```typescript
+toHaveAccessibleDescription(expectedAccessibleDescription?: string | RegExp)
+```
+
+This allows you to assert that an element has the expected
+[accessible description](https://w3c.github.io/accname/).
+
+You can pass the exact string of the expected accessible description, or you can
+make a partial match passing a regular expression, or by using
+[jasmine.stringContaining](https://jasmine.github.io/api/edge/jasmine#.stringContaining)/[jasmine.stringMatching](https://jasmine.github.io/api/edge/jasmine#.stringMatching).
+
+#### Examples
+
+```html
+<a data-testid="link" href="/" aria-label="Home page" title="A link to start over">Start</a>
+<a data-testid="extra-link" href="/about" aria-label="About page">About</a>
+<img src="avatar.jpg" data-testid="avatar" alt="User profile pic" />
+<img src="logo.jpg" data-testid="logo" alt="Company logo" aria-describedby="t1" />
+<span id="t1" role="presentation">The logo of Our Company</span>
+```
+
+```js
+expect(getByTestId('link')).toHaveAccessibleDescription();
+expect(getByTestId('link')).toHaveAccessibleDescription('A link to start over');
+expect(getByTestId('link')).not.toHaveAccessibleDescription('Home page');
+expect(getByTestId('extra-link')).not.toHaveAccessibleDescription();
+expect(getByTestId('avatar')).not.toHaveAccessibleDescription();
+expect(getByTestId('logo')).not.toHaveAccessibleDescription('Company logo');
+expect(getByTestId('logo')).toHaveAccessibleDescription('The logo of Our Company');
+```
+
+<hr />
+
+### `toHaveAccessibleName`
+
+```typescript
+toHaveAccessibleName(expectedAccessibleName?: string | RegExp)
+```
+
+This allows you to assert that an element has the expected
+[accessible name](https://w3c.github.io/accname/). It is useful, for instance,
+to assert that form elements and buttons are properly labelled.
+
+You can pass the exact string of the expected accessible name, or you can make a
+partial match passing a regular expression, or by using
+[jasmine.stringContaining](https://jasmine.github.io/api/edge/jasmine#.stringContaining)/[jasmine.stringMatching](https://jasmine.github.io/api/edge/jasmine#.stringMatching).
+
+#### Examples
+
+```html
+<img data-testid="img-alt" src="" alt="Test alt" />
+<img data-testid="img-empty-alt" src="" alt="" />
+<svg data-testid="svg-title"><title>Test title</title></svg>
+<button data-testid="button-img-alt"><img src="" alt="Test" /></button>
+<p><img data-testid="img-paragraph" src="" alt="" /> Test content</p>
+<button data-testid="svg-button"><svg><title>Test</title></svg></p>
+<div><svg data-testid="svg-without-title"></svg></div>
+<input data-testid="input-title" title="test" />
+```
+
+```javascript
+expect(getByTestId('img-alt')).toHaveAccessibleName('Test alt');
+expect(getByTestId('img-empty-alt')).not.toHaveAccessibleName();
+expect(getByTestId('svg-title')).toHaveAccessibleName('Test title');
+expect(getByTestId('button-img-alt')).toHaveAccessibleName();
+expect(getByTestId('img-paragraph')).not.toHaveAccessibleName();
+expect(getByTestId('svg-button')).toHaveAccessibleName();
+expect(getByTestId('svg-without-title')).not.toHaveAccessibleName();
+expect(getByTestId('input-title')).toHaveAccessibleName();
 ```
 
 <hr />
@@ -892,6 +1010,52 @@ expect(ariaCheckboxUnchecked).not.toBePartiallyChecked();
 
 inputCheckboxIndeterminate.indeterminate = true;
 expect(inputCheckboxIndeterminate).toBePartiallyChecked();
+```
+
+<hr />
+
+### `toHaveErrorMessage`
+
+```typescript
+toHaveErrorMessage(text: string | RegExp)
+```
+
+This allows you to check whether the given element has an
+[ARIA error message](https://www.w3.org/TR/wai-aria/#aria-errormessage) or not.
+
+Use the `aria-errormessage` attribute to reference another element that contains
+custom error message text. Multiple ids is **NOT** allowed. Authors MUST use
+`aria-invalid` in conjunction with `aria-errormessage`. Learn more from
+[`aria-errormessage` spec](https://www.w3.org/TR/wai-aria/#aria-errormessage).
+
+Whitespace is normalized.
+
+When a `string` argument is passed through, it will perform a whole
+case-sensitive match to the error message text.
+
+To perform a case-insensitive match, you can use a `RegExp` with the `/i`
+modifier.
+
+To perform a partial match, you can pass a `RegExp` or use
+`jasmine.stringContaining("partial string")`.
+
+#### Examples
+
+```html
+<label for="startTime"> Please enter a start time for the meeting: </label>
+<input id="startTime" type="text" aria-errormessage="msgID" aria-invalid="true" value="11:30 PM" />
+<span id="msgID" aria-live="assertive" style="visibility:visible">
+	Invalid time: the time must be between 9:00 AM and 5:00 PM
+</span>
+```
+
+```javascript
+const timeInput = getByLabel('startTime');
+
+expect(timeInput).toHaveErrorMessage('Invalid time: the time must be between 9:00 AM and 5:00 PM');
+expect(timeInput).toHaveErrorMessage(/invalid time/i); // to partially match
+expect(timeInput).toHaveErrorMessage(jasmine.stringContaining('Invalid time')); // to partially match
+expect(timeInput).not.toHaveErrorMessage('Pikachu!');
 ```
 
 <hr />

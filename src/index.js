@@ -3,11 +3,15 @@ import { toHaveTextContent } from './toHaveTextContent';
 import { toHaveClassName } from './toHaveClassName';
 import { toBeChecked } from './toBeChecked';
 import { toBeEmptyDOMElement } from './toBeEmptyDOMElement';
+import { toContainHTML } from './toContainHTML';
 import { toHaveFocus } from './toHaveFocus';
 import { toBeDisabled, toBeEnabled } from './toBeDisabled';
+import { toHaveAccessibleDescription } from './toHaveAccessibleDescription';
+import { toHaveAccessibleName } from './toHaveAccessibleName';
 import { toHaveDescription } from './toHaveDescription';
 import { toHaveValue } from './toHaveValue';
 import { toHaveFormValues } from './toHaveFormValues';
+import { toHaveErrorMessage } from './toHaveErrorMessage';
 import { toContainElement } from './toContainElement';
 import { toBeRequired } from './toBeRequired';
 import { toBeInvalid, toBeValid } from './toBeInvalid';
@@ -23,12 +27,16 @@ const JasmineDOM = {
 	toHaveClassName,
 	toBeChecked,
 	toBeEmptyDOMElement,
+	toContainHTML,
+	toHaveAccessibleDescription,
+	toHaveAccessibleName,
 	toHaveFocus,
 	toBeDisabled,
 	toBeEnabled,
 	toHaveDescription,
 	toHaveValue,
 	toHaveFormValues,
+	toHaveErrorMessage,
 	toContainElement,
 	toBeRequired,
 	toBeInvalid,

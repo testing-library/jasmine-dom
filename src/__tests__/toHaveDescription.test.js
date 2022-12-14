@@ -2,7 +2,11 @@ import { render } from './helpers/renderer';
 import { toHaveDescription } from '../toHaveDescription';
 
 describe('.toHaveDescription', () => {
-	const { compare, negativeCompare } = toHaveDescription(jasmine.matchersUtil);
+	const matchersUtilMock = {
+		equals: Object.is,
+	};
+
+	const { compare, negativeCompare } = toHaveDescription(matchersUtilMock);
 
 	it('positive test cases', () => {
 		const { queryByTestId } = render(`
