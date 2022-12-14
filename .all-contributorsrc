@@ -52,6 +52,16 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "oriSomething",
+      "name": "Ori Livni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2685242?v=4",
+      "profile": "http://www.orilivni.com",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -59,5 +69,6 @@
   "projectOwner": "testing-library",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitConvention": "angular"
 }
