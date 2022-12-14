@@ -44,7 +44,7 @@
 		"eslint": "^8.0.1",
 		"eslint-config-prettier": "^8.0.0",
 		"eslint-plugin-prettier": "^4.0.0",
-		"jasmine": "^3.6.3",
+		"jasmine": "^4.5.0",
 		"jasmine-reporters": "^2.3.2",
 		"jasmine-spec-reporter": "^7.0.0",
 		"jsdom": "^16.2.1",
