@@ -27,7 +27,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"@babel/runtime": "^7.20.6",
-		"@types/testing-library__jasmine-dom": "^1.0.3",
 		"aria-query": "^5.1.3",
 		"chalk": "^4.1.0",
 		"css": "^3.0.0",
