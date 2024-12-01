@@ -128,6 +128,12 @@ beforeAll(() => {
 
 ### With TypeScript
 
+Install the type definitions:
+
+```
+npm install --save-dev @types/testing-library__jasmine-dom
+```
+
 Add `"@testing-library/jasmine-dom"` to `types` in the tests `tsconfig` (e.g. `tsconfig.spec.json` in an Angular project).
 
 Example:
