@@ -122,7 +122,7 @@ Make a new file inside that directory, import @testing-library/jasmine-dom and a
 import JasmineDOM from '@testing-library/jasmine-dom';
 
 beforeAll(() => {
-	jasmine.getEnv().addMatchers(JasmineDOM);
+	jasmine.addMatchers(JasmineDOM);
 });
 ```
 
@@ -143,10 +143,10 @@ Example:
 In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom and add the matchers like so:
 
 ```typescript
-import JasmineDOM from '@testing-library/jasmine-dom/dist';
+import JasmineDOM from '@testing-library/jasmine-dom';
 
 beforeAll(() => {
-	jasmine.getEnv().addMatchers(JasmineDOM);
+	jasmine.addMatchers(JasmineDOM);
 });
 ```
 
