@@ -103,8 +103,7 @@ yarn add --dev @testing-library/jasmine-dom
 
 ### With JavaScript
 
-You should have a directory for helpers specified inside the helpers array in your `jasmine.json` file.
-Example:
+You should have a directory for helpers specified inside the `/helpers` array in your `jasmine.json` file, for example:
 
 ```json
 {
@@ -116,7 +115,7 @@ Example:
 }
 ```
 
-Make a new file inside that directory, import @testing-library/jasmine-dom and add the matchers like so:
+Make a new file inside that directory, import `@testing-library/jasmine-dom` and add the matchers like so:
 
 ```javascript
 import JasmineDOM from '@testing-library/jasmine-dom';
@@ -128,15 +127,13 @@ beforeAll(() => {
 
 ### With TypeScript
 
-Install the type definitions:
+Install the type definitions with:
 
 ```
 npm install --save-dev @types/testing-library__jasmine-dom
 ```
 
-Add `"@testing-library/jasmine-dom"` to `types` in the tests `tsconfig` (e.g. `tsconfig.spec.json` in an Angular project).
-
-Example:
+Add `"@testing-library/jasmine-dom"` to `/compilerOptions/types` in the tests `tsconfig`, for example:
 
 ```json
 {
@@ -146,15 +143,7 @@ Example:
 }
 ```
 
-In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom and add the matchers like so:
-
-```typescript
-import JasmineDOM from '@testing-library/jasmine-dom';
-
-beforeAll(() => {
-	jasmine.addMatchers(JasmineDOM);
-});
-```
+Follow the [JavaScript instructions](#with-javascript) to add the matchers.
 
 ## Matchers
 
