@@ -103,8 +103,7 @@ yarn add --dev @testing-library/jasmine-dom
 
 ### With JavaScript
 
-You should have a directory for helpers specified inside the helpers array in your `jasmine.json` file.
-Example:
+You should have a directory for helpers specified inside the `/helpers` array in your `jasmine.json` file, for example:
 
 ```json
 {
@@ -116,21 +115,25 @@ Example:
 }
 ```
 
-Make a new file inside that directory, import @testing-library/jasmine-dom and add the matchers like so:
+Make a new file inside that directory, import `@testing-library/jasmine-dom` and add the matchers like so:
 
 ```javascript
 import JasmineDOM from '@testing-library/jasmine-dom';
 
 beforeAll(() => {
-	jasmine.getEnv().addMatchers(JasmineDOM);
+	jasmine.addMatchers(JasmineDOM);
 });
 ```
 
 ### With TypeScript
 
-Add `"@testing-library/jasmine-dom"` to `types` in the tests `tsconfig` (e.g. `tsconfig.spec.json` in an Angular project).
+Install the type definitions with:
 
-Example:
+```
+npm install --save-dev @types/testing-library__jasmine-dom
+```
+
+Add `"@testing-library/jasmine-dom"` to `/compilerOptions/types` in the tests `tsconfig`, for example:
 
 ```json
 {
@@ -140,14 +143,54 @@ Example:
 }
 ```
 
-In your tests setup file, (`test.ts` in an Angular project) import jasmine-dom and add the matchers like so:
+Follow the [JavaScript instructions](#with-javascript) to add the matchers.
 
-```typescript
-import JasmineDOM from '@testing-library/jasmine-dom/dist';
+
+### With Angular
+
+Follow the [TypeScript instructions](#with-typescript) to install the type definitions, making sure to include the types in `tsconfig.spec.json`, the configuration file used for the test environment.
+
+Add the matchers in the test setup file, which is typically located in `src/test.ts`:
+
+```ts
+import { getTestBed } from '@angular/core/testing';
+import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import JasmineDOM from '@testing-library/jasmine-dom';
 
 beforeAll(() => {
-	jasmine.getEnv().addMatchers(JasmineDOM);
+	jasmine.addMatchers(JasmineDOM);
 });
+
+getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting(), {});
+```
+
+If your project was created with Angular 15 or later, you will not have a test setup file, so you will need to create one. Create a `test.ts` file in `src` with the code shown in the previous step, and then add the path to it in `angular.json` in `/projects/<your-project>/architect/test/options/main`:
+
+```json
+{
+	"projects": {
+		"myProject": {
+			"architect": {
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": ["zone.js", "zone.js/testing"],
+						"tsConfig": "tsconfig.spec.json",
+						"assets": [
+							{
+								"glob": "**/*",
+								"input": "public"
+							}
+						],
+						"main": "src/test.ts",
+						"styles": ["src/styles.css"],
+						"scripts": []
+					}
+				}
+			}
+		}
+	}
+}
 ```
 
 ## Matchers
