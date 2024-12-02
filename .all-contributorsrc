@@ -62,6 +62,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "sebastian-altamirano",
+      "name": "Sebastián Altamirano",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38230545?v=4",
+      "profile": "https://github.com/sebastian-altamirano",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -70,5 +79,6 @@
   "repoType": "github",
   "repoHost": "https://github.com",
   "skipCi": true,
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "commitType": "docs"
 }
