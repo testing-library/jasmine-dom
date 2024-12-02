@@ -24,7 +24,7 @@
 [![MIT License][license-badge]][license]
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![PRs Welcome][prs-badge]][prs]
@@ -1130,12 +1130,13 @@ Thanks goes to these people ([emoji key][emojis])
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3?s=100" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-      <td align="center"><a href="https://github.com/brrianalexis"><img src="https://avatars2.githubusercontent.com/u/51463930?v=4?s=100" width="100px;" alt="Brian Alexis"/><br /><sub><b>Brian Alexis</b></sub></a><br /><a href="#ideas-brrianalexis" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Documentation">📖</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Tests">⚠️</a></td>
-      <td align="center"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4?s=100" width="100px;" alt="IanGrainger"/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
-      <td align="center"><a href="https://michaeldeboey.be"><img src="https://avatars.githubusercontent.com/u/6643991?v=4?s=100" width="100px;" alt="Michaël De Boey"/><br /><sub><b>Michaël De Boey</b></sub></a><br /><a href="#infra-MichaelDeBoey" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-      <td align="center"><a href="https://nickmccurdy.com/"><img src="https://avatars.githubusercontent.com/u/927220?v=4?s=100" width="100px;" alt="Nick McCurdy"/><br /><sub><b>Nick McCurdy</b></sub></a><br /><a href="#infra-nickmccurdy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-      <td align="center"><a href="http://www.orilivni.com"><img src="https://avatars.githubusercontent.com/u/2685242?v=4?s=100" width="100px;" alt="Ori Livni"/><br /><sub><b>Ori Livni</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=oriSomething" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=oriSomething" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://kentcdodds.com"><img src="https://avatars.githubusercontent.com/u/1500684?v=3?s=100" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/brrianalexis"><img src="https://avatars2.githubusercontent.com/u/51463930?v=4?s=100" width="100px;" alt="Brian Alexis"/><br /><sub><b>Brian Alexis</b></sub></a><br /><a href="#ideas-brrianalexis" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Documentation">📖</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=brrianalexis" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/IanGrainger"><img src="https://avatars0.githubusercontent.com/u/559336?v=4?s=100" width="100px;" alt="IanGrainger"/><br /><sub><b>IanGrainger</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=IanGrainger" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://michaeldeboey.be"><img src="https://avatars.githubusercontent.com/u/6643991?v=4?s=100" width="100px;" alt="Michaël De Boey"/><br /><sub><b>Michaël De Boey</b></sub></a><br /><a href="#infra-MichaelDeBoey" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://nickmccurdy.com/"><img src="https://avatars.githubusercontent.com/u/927220?v=4?s=100" width="100px;" alt="Nick McCurdy"/><br /><sub><b>Nick McCurdy</b></sub></a><br /><a href="#infra-nickmccurdy" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.orilivni.com"><img src="https://avatars.githubusercontent.com/u/2685242?v=4?s=100" width="100px;" alt="Ori Livni"/><br /><sub><b>Ori Livni</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=oriSomething" title="Code">💻</a> <a href="https://github.com/testing-library/jasmine-dom/commits?author=oriSomething" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sebastian-altamirano"><img src="https://avatars.githubusercontent.com/u/38230545?v=4?s=100" width="100px;" alt="Sebastián Altamirano"/><br /><sub><b>Sebastián Altamirano</b></sub></a><br /><a href="https://github.com/testing-library/jasmine-dom/commits?author=sebastian-altamirano" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
